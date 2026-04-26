@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu de la semaine — 27 avril au 3 mai 2026</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #fafaf8;
+            color: #2d2d2d;
+            line-height: 1.6;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a5632, #2d8a56);
+            color: white;
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+        .header h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.3rem; }
+        .header .week { font-size: 1rem; opacity: 0.9; }
+        .header .subtitle { font-size: 0.85rem; opacity: 0.7; margin-top: 0.5rem; }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: #f0efe8;
+            border-bottom: 1px solid #ddd;
+        }
+        nav a {
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        nav a.active {
+            background: #1a5632;
+            color: white;
+        }
+        nav a:not(.active) {
+            background: white;
+            color: #1a5632;
+            border: 1px solid #1a5632;
+        }
+        nav a:hover:not(.active) { background: #e8f5ee; }
+        .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+
+        .info-box {
+            background: #e8f5ee;
+            border-left: 4px solid #2d8a56;
+            padding: 1rem 1.2rem;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        .info-box strong { color: #1a5632; }
+
+        .planning {
+            display: grid;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        .day-row {
+            display: grid;
+            grid-template-columns: 110px 1fr 1fr;
+            gap: 0.5rem;
+            align-items: stretch;
+        }
+        .day-label {
+            background: #1a5632;
+            color: white;
+            padding: 0.8rem 0.6rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .meal-cell {
+            background: white;
+            border: 1px solid #e0dfd8;
+            border-radius: 8px;
+            padding: 0.7rem 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+        }
+        .meal-cell:hover {
+            border-color: #2d8a56;
+            box-shadow: 0 2px 8px rgba(45, 138, 86, 0.15);
+        }
+        .meal-cell .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #888;
+            margin-bottom: 0.2rem;
+        }
+        .meal-cell .name {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #2d2d2d;
+        }
+        .meal-cell .tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            background: #f0efe8;
+            padding: 0.15rem 0.5rem;
+            border-radius: 10px;
+            margin-top: 0.3rem;
+            color: #666;
+        }
+
+        .daily-base {
+            background: white;
+            border: 1px solid #e0dfd8;
+            border-radius: 12px;
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .daily-base h3 {
+            color: #1a5632;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+        .daily-base ul { list-style: none; }
+        .daily-base li {
+            padding: 0.3rem 0;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #f5f5f0;
+        }
+        .daily-base li:last-child { border: none; }
+        .daily-base li::before { content: "• "; color: #2d8a56; font-weight: bold; }
+
+        /* Recipe modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+        .modal-overlay.active { display: flex; }
+        .modal {
+            background: white;
+            border-radius: 16px;
+            max-width: 650px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 2rem;
+            position: relative;
+        }
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #f0efe8;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-close:hover { background: #e0dfd8; }
+        .modal h2 { color: #1a5632; font-size: 1.4rem; margin-bottom: 0.3rem; padding-right: 2rem; }
+        .modal .meta { color: #888; font-size: 0.85rem; margin-bottom: 1rem; }
+        .modal h3 { color: #2d8a56; font-size: 1rem; margin: 1.2rem 0 0.5rem; }
+        .modal ul { padding-left: 1.2rem; margin-bottom: 0.5rem; }
+        .modal li { font-size: 0.9rem; margin-bottom: 0.3rem; }
+        .modal ol { padding-left: 1.2rem; }
+        .modal ol li { margin-bottom: 0.5rem; font-size: 0.9rem; }
+        .modal .macros {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin: 0.8rem 0;
+        }
+        .modal .macro-tag {
+            background: #e8f5ee;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #1a5632;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+
+        @media (max-width: 600px) {
+            .day-row {
+                grid-template-columns: 1fr;
+            }
+            .day-label {
+                padding: 0.5rem;
+            }
+            .header h1 { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Menu de la semaine</h1>
+    <div class="week">27 avril — 3 mai 2026</div>
+    <div class="subtitle">Pescétarien · Sans produits laitiers · 2 personnes</div>
+</div>
+
+<nav>
+    <a href="index.html" class="active">Menu</a>
+    <a href="liste-courses.html">Liste de courses</a>
+</nav>
+
+<div class="container">
+
+    <div class="info-box">
+        <strong>4 plats</strong> pour la semaine, chacun cuisiné une fois et servi 2 à 3 fois. Cliquez sur un plat pour voir la recette.
+        Portions adaptées : Jad (prise de masse ~2800 kcal) + accompagnant·e (~2000 kcal).
+    </div>
+
+    <div class="planning">
+        <div class="day-row">
+            <div class="day-label">Lundi<br>27 avr.</div>
+            <div class="meal-cell" onclick="openRecipe('bowl')">
+                <div class="label">Déjeuner</div>
+                <div class="name">Bowl lentilles & sardines</div>
+                <div class="tag">30 min</div>
+            </div>
+            <div class="meal-cell" onclick="openRecipe('padthai')">
+                <div class="label">Dîner</div>
+                <div class="name">Pad thaï au tofu</div>
+                <div class="tag">25 min</div>
+            </div>
+        </div>
+
+        <div class="day-row">
+            <div class="day-label">Mardi<br>28 avr.</div>
+            <div class="meal-cell" onclick="openRecipe('curry')">
+                <div class="label">Déjeuner</div>
+                <div class="name">Curry pois chiches & cabillaud</div>
+                <div class="tag">35 min</div>
+            </div>
+            <div class="meal-cell" onclick="openRecipe('padthai')">
+                <div class="label">Dîner</div>
+                <div class="name">Pad thaï au tofu</div>
+                <div class="tag">restes</div>
+            </div>
+        </div>
+
+        <div class="day-row">
+            <div class="day-label">Mercredi<br>29 avr.</div>
+            <div class="meal-cell" onclick="openRecipe('bowl')">
+                <div class="label">Déjeuner</div>
+                <div class="name">Bowl lentilles & sardines</div>
+                <div class="tag">restes</div>
+            </div>
+            <div class="meal-cell" onclick="openRecipe('gratin')">
+                <div class="label">Dîner</div>
+                <div class="name">Gratin pâtes, œufs & épinards</div>
+                <div class="tag">40 min</div>
+            </div>
+        </div>
+
+        <div class="day-row">
+            <div class="day-label">Jeudi<br>30 avr.</div>
+            <div class="meal-cell" onclick="openRecipe('curry')">
+                <div class="label">Déjeuner</div>
+                <div class="name">Curry pois chiches & cabillaud</div>
+                <div class="tag">restes</div>
+            </div>
+            <div class="meal-cell" onclick="openRecipe('gratin')">
+                <div class="label">Dîner</div>
+                <div class="name">Gratin pâtes, œufs & épinards</div>
+                <div class="tag">restes</div>
+            </div>
+        </div>
+
+        <div class="day-row">
+            <div class="day-label">Vendredi<br>1 mai</div>
+            <div class="meal-cell" onclick="openRecipe('bowl')">
+                <div class="label">Déjeuner</div>
+                <div class="name">Bowl lentilles & sardines</div>
+                <div class="tag">restes</div>
+            </div>
+            <div class="meal-cell" onclick="openRecipe('padthai')">
+                <div class="label">Dîner</div>
+                <div class="name">Pad thaï au tofu</div>
+                <div class="tag">recuisiner</div>
+            </div>
+        </div>
+
+        <div class="day-row">
+            <div class="day-label">Samedi<br>2 mai</div>
+            <div class="meal-cell" onclick="openRecipe('curry')">
+                <div class="label">Déjeuner</div>
+                <div class="name">Curry pois chiches & cabillaud</div>
+                <div class="tag">recuisiner</div>
+            </div>
+            <div class="meal-cell" onclick="openRecipe('gratin')">
+                <div class="label">Dîner</div>
+                <div class="name">Gratin pâtes, œufs & épinards</div>
+                <div class="tag">restes</div>
+            </div>
+        </div>
+
+        <div class="day-row">
+            <div class="day-label">Dimanche<br>3 mai</div>
+            <div class="meal-cell" onclick="openRecipe('bowl')">
+                <div class="label">Déjeuner</div>
+                <div class="name">Bowl lentilles & sardines</div>
+                <div class="tag">recuisiner</div>
+            </div>
+            <div class="meal-cell" onclick="openRecipe('curry')">
+                <div class="label">Dîner</div>
+                <div class="name">Curry pois chiches & cabillaud</div>
+                <div class="tag">restes</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="daily-base">
+        <h3>Base quotidienne (chaque jour)</h3>
+        <ul>
+            <li><strong>Petit-déjeuner :</strong> 100g flocons d'avoine + lait d'avoine + 3 œufs brouillés + 1 banane + 1 c.à.s. beurre de cacahuète (~700 kcal, 40g prot.)</li>
+            <li><strong>Collation Jad :</strong> Houmous maison (pois chiches) + galettes de riz + 30g amandes + 1 fruit (~400 kcal, 18g prot.)</li>
+            <li><strong>Collation soir Jad :</strong> Tartines + beurre de cacahuète + 1 banane (~250 kcal, 10g prot.) — si besoin d'atteindre les 2800 kcal</li>
+        </ul>
+    </div>
+
+</div>
+
+<!-- Recipe Modals -->
+<div class="modal-overlay" id="modal-bowl">
+    <div class="modal">
+        <button class="modal-close" onclick="closeRecipe('bowl')">✕</button>
+        <h2>Bowl lentilles & sardines méditerranéen</h2>
+        <div class="meta">Pour 4 portions · 30 min · Budget : ~5€</div>
+        <div class="macros">
+            <span class="macro-tag">520 kcal/portion</span>
+            <span class="macro-tag">38g protéines</span>
+            <span class="macro-tag">55g glucides</span>
+            <span class="macro-tag">14g lipides</span>
+        </div>
+        <h3>Ingrédients</h3>
+        <ul>
+            <li>400g lentilles vertes sèches</li>
+            <li>3 boîtes de sardines à l'huile d'olive (375g net égoutté)</li>
+            <li>2 tomates moyennes, coupées en dés</li>
+            <li>1 concombre, coupé en dés</li>
+            <li>1 oignon rouge, émincé fin</li>
+            <li>1 bouquet de persil frais, haché</li>
+            <li>2 c.à.s. huile d'olive</li>
+            <li>Jus de 1 citron</li>
+            <li>1 c.à.c. cumin moulu</li>
+            <li>Sel, poivre</li>
+        </ul>
+        <h3>Préparation</h3>
+        <ol>
+            <li>Cuire les lentilles dans 3× leur volume d'eau salée, ~20 min. Égoutter et laisser tiédir.</li>
+            <li>Préparer la vinaigrette : huile d'olive + jus de citron + cumin + sel + poivre.</li>
+            <li>Mélanger les lentilles avec les tomates, concombre, oignon rouge, persil.</li>
+            <li>Émietter les sardines égouttées par-dessus.</li>
+            <li>Arroser de vinaigrette et mélanger délicatement.</li>
+        </ol>
+        <h3>Notes</h3>
+        <ul>
+            <li>Se conserve 3 jours au frigo. Sortir 15 min avant de servir.</li>
+            <li><strong>Jad</strong> : servir ~350g de lentilles + sardines complètes. <strong>Accompagnant·e</strong> : ~200g de lentilles + moitié des sardines.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="modal-overlay" id="modal-curry">
+    <div class="modal">
+        <button class="modal-close" onclick="closeRecipe('curry')">✕</button>
+        <h2>Curry de pois chiches & cabillaud au lait de coco</h2>
+        <div class="meta">Pour 4 portions · 35 min · Budget : ~7€</div>
+        <div class="macros">
+            <span class="macro-tag">560 kcal/portion</span>
+            <span class="macro-tag">35g protéines</span>
+            <span class="macro-tag">52g glucides</span>
+            <span class="macro-tag">20g lipides</span>
+        </div>
+        <h3>Ingrédients</h3>
+        <ul>
+            <li>400g filets de cabillaud surgelés</li>
+            <li>2 boîtes de pois chiches (480g égouttés)</li>
+            <li>1 boîte de lait de coco (400ml)</li>
+            <li>200g épinards frais (ou surgelés)</li>
+            <li>1 oignon, émincé</li>
+            <li>3 gousses d'ail, hachées</li>
+            <li>1 morceau de gingembre frais (3cm), râpé</li>
+            <li>2 c.à.s. pâte de curry (jaune ou rouge)</li>
+            <li>200g riz basmati (pour servir)</li>
+            <li>1 c.à.s. huile de colza</li>
+            <li>Jus de 1/2 citron vert</li>
+            <li>Coriandre fraîche (optionnel)</li>
+        </ul>
+        <h3>Préparation</h3>
+        <ol>
+            <li>Lancer le riz selon les instructions du paquet.</li>
+            <li>Faire revenir l'oignon dans l'huile 3 min. Ajouter ail, gingembre et pâte de curry, cuire 1 min.</li>
+            <li>Ajouter le lait de coco et les pois chiches égouttés. Porter à frémissement.</li>
+            <li>Couper le cabillaud en morceaux de 3cm, l'ajouter au curry. Cuire 8-10 min à feu moyen.</li>
+            <li>Ajouter les épinards, cuire 2 min jusqu'à ce qu'ils fondent.</li>
+            <li>Jus de citron vert, sel, poivre. Servir sur le riz.</li>
+        </ol>
+        <h3>Notes</h3>
+        <ul>
+            <li>Se réchauffe très bien. Conserver riz et curry séparément.</li>
+            <li><strong>Jad</strong> : portion généreuse de riz (~180g cru) + curry complet. <strong>Accompagnant·e</strong> : ~100g riz + curry.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="modal-overlay" id="modal-padthai">
+    <div class="modal">
+        <button class="modal-close" onclick="closeRecipe('padthai')">✕</button>
+        <h2>Pad thaï au tofu & œufs</h2>
+        <div class="meta">Pour 4 portions · 25 min · Budget : ~6€</div>
+        <div class="macros">
+            <span class="macro-tag">510 kcal/portion</span>
+            <span class="macro-tag">30g protéines</span>
+            <span class="macro-tag">58g glucides</span>
+            <span class="macro-tag">16g lipides</span>
+        </div>
+        <h3>Ingrédients</h3>
+        <ul>
+            <li>300g nouilles de riz (pad thaï)</li>
+            <li>400g tofu ferme, coupé en cubes</li>
+            <li>4 œufs</li>
+            <li>2 carottes, râpées</li>
+            <li>200g pousses de soja (ou germes de haricot mungo)</li>
+            <li>4 oignons verts, émincés</li>
+            <li>60g cacahuètes concassées</li>
+            <li>2 citrons verts</li>
+            <li><strong>Sauce :</strong> 3 c.à.s. sauce soja, 2 c.à.s. beurre de cacahuète, 1 c.à.s. sirop d'érable (ou sucre), 1 c.à.s. huile de sésame, 1 c.à.s. vinaigre de riz, sriracha au goût</li>
+        </ul>
+        <h3>Préparation</h3>
+        <ol>
+            <li>Tremper les nouilles de riz dans l'eau chaude 8 min (ou selon paquet). Égoutter.</li>
+            <li>Mélanger tous les ingrédients de la sauce dans un bol.</li>
+            <li>Faire dorer le tofu à feu vif dans une grande poêle/wok huilé, 5 min. Réserver.</li>
+            <li>Dans la même poêle, brouiller les 4 œufs. Réserver avec le tofu.</li>
+            <li>Sauter les carottes et pousses de soja 2 min.</li>
+            <li>Ajouter les nouilles, la sauce, le tofu et les œufs. Mélanger 2 min à feu vif.</li>
+            <li>Servir avec cacahuètes, oignons verts et quartiers de citron vert.</li>
+        </ol>
+        <h3>Notes</h3>
+        <ul>
+            <li>Cuisiner 2 fois dans la semaine (lun-mar + ven) pour garder la fraîcheur des nouilles.</li>
+            <li><strong>Jad</strong> : portion XL (~400g). <strong>Accompagnant·e</strong> : portion normale (~250g).</li>
+        </ul>
+    </div>
+</div>
+
+<div class="modal-overlay" id="modal-gratin">
+    <div class="modal">
+        <button class="modal-close" onclick="closeRecipe('gratin')">✕</button>
+        <h2>Gratin de pâtes aux œufs & épinards</h2>
+        <div class="meta">Pour 4 portions · 40 min · Budget : ~5€</div>
+        <div class="macros">
+            <span class="macro-tag">540 kcal/portion</span>
+            <span class="macro-tag">32g protéines</span>
+            <span class="macro-tag">60g glucides</span>
+            <span class="macro-tag">16g lipides</span>
+        </div>
+        <h3>Ingrédients</h3>
+        <ul>
+            <li>400g pâtes (penne ou fusilli)</li>
+            <li>6 œufs</li>
+            <li>300g épinards frais (ou 200g surgelés)</li>
+            <li>1 boîte de thon au naturel (200g égouttés)</li>
+            <li>200ml lait d'avoine</li>
+            <li>2 c.à.s. levure nutritionnelle (pour le goût "fromager")</li>
+            <li>1 c.à.s. moutarde de Dijon</li>
+            <li>2 gousses d'ail, hachées</li>
+            <li>40g chapelure</li>
+            <li>2 c.à.s. huile d'olive</li>
+            <li>Noix de muscade, sel, poivre</li>
+        </ul>
+        <h3>Préparation</h3>
+        <ol>
+            <li>Préchauffer le four à 200°C. Cuire les pâtes al dente, égoutter.</li>
+            <li>Faire revenir l'ail dans l'huile d'olive 1 min. Ajouter les épinards, cuire jusqu'à ce qu'ils fondent (3 min).</li>
+            <li>Battre les œufs avec le lait d'avoine, la levure nutritionnelle, la moutarde, sel, poivre, muscade.</li>
+            <li>Mélanger pâtes + épinards + thon émietté dans un plat à gratin.</li>
+            <li>Verser le mélange œufs par-dessus. Saupoudrer de chapelure.</li>
+            <li>Enfourner 20 min jusqu'à ce que le dessus soit doré.</li>
+        </ol>
+        <h3>Notes</h3>
+        <ul>
+            <li>Se conserve 3 jours au frigo, se réchauffe au four 10 min à 180°C.</li>
+            <li>La levure nutritionnelle remplace le fromage râpé : goût umami sans produit laitier.</li>
+            <li><strong>Jad</strong> : 1/3 du plat. <strong>Accompagnant·e</strong> : 1/4 du plat.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="footer">
+    Mis à jour le 26 avril 2026 · Menu adapté au programme sportif de Jad
+</div>
+
+<script>
+    function openRecipe(id) {
+        document.getElementById('modal-' + id).classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeRecipe(id) {
+        document.getElementById('modal-' + id).classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    document.querySelectorAll('.modal-overlay').forEach(overlay => {
+        overlay.addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    });
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            document.querySelectorAll('.modal-overlay.active').forEach(m => {
+                m.classList.remove('active');
+            });
+            document.body.style.overflow = '';
+        }
+    });
+</script>
+
+</body>
+</html>

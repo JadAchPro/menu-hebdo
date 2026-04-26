@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste de courses — 27 avril au 3 mai 2026</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #fafaf8;
+            color: #2d2d2d;
+            line-height: 1.6;
+        }
+        .header {
+            background: linear-gradient(135deg, #8b4513, #c4783e);
+            color: white;
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+        .header h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.3rem; }
+        .header .week { font-size: 1rem; opacity: 0.9; }
+        .header .budget { font-size: 1.1rem; margin-top: 0.5rem; font-weight: 600; }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: #f0efe8;
+            border-bottom: 1px solid #ddd;
+        }
+        nav a {
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        nav a.active {
+            background: #8b4513;
+            color: white;
+        }
+        nav a:not(.active) {
+            background: white;
+            color: #8b4513;
+            border: 1px solid #8b4513;
+        }
+        nav a:hover:not(.active) { background: #fdf0e6; }
+        .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+
+        .category {
+            margin-bottom: 1.5rem;
+        }
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 0.6rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #c4783e;
+        }
+        .category-icon {
+            font-size: 1.3rem;
+            width: 32px;
+            text-align: center;
+        }
+        .category-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #8b4513;
+        }
+        .category-cost {
+            margin-left: auto;
+            font-size: 0.85rem;
+            color: #888;
+            font-weight: 600;
+        }
+        .items {
+            display: grid;
+            gap: 0.3rem;
+        }
+        .item {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 0.5rem 0.8rem;
+            background: white;
+            border: 1px solid #e8e7e0;
+            border-radius: 8px;
+            transition: all 0.15s;
+            cursor: pointer;
+        }
+        .item:hover { border-color: #c4783e; }
+        .item.checked {
+            background: #f8f8f5;
+            opacity: 0.5;
+        }
+        .item.checked .item-name { text-decoration: line-through; }
+        .checkbox {
+            width: 22px;
+            height: 22px;
+            border: 2px solid #c4783e;
+            border-radius: 5px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s;
+        }
+        .item.checked .checkbox {
+            background: #c4783e;
+            border-color: #c4783e;
+        }
+        .item.checked .checkbox::after {
+            content: "✓";
+            color: white;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+        .item-name {
+            flex: 1;
+            font-size: 0.9rem;
+        }
+        .item-qty {
+            font-size: 0.85rem;
+            color: #888;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .item-use {
+            font-size: 0.75rem;
+            color: #aaa;
+            min-width: 80px;
+            text-align: right;
+        }
+
+        .summary {
+            background: white;
+            border: 2px solid #c4783e;
+            border-radius: 12px;
+            padding: 1.2rem 1.5rem;
+            margin-top: 1rem;
+        }
+        .summary h3 {
+            color: #8b4513;
+            margin-bottom: 0.5rem;
+        }
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.3rem 0;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #f0efe8;
+        }
+        .summary-row:last-child { border: none; font-weight: 700; font-size: 1rem; color: #8b4513; }
+
+        .progress-bar {
+            margin-top: 1rem;
+            background: #f0efe8;
+            border-radius: 10px;
+            height: 8px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: #c4783e;
+            border-radius: 10px;
+            transition: width 0.3s;
+            width: 0%;
+        }
+        .progress-text {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 0.3rem;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+
+        @media (max-width: 600px) {
+            .item-use { display: none; }
+            .header h1 { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Liste de courses</h1>
+    <div class="week">Semaine du 27 avril au 3 mai 2026</div>
+    <div class="budget">Budget estimé : ~62-68 €</div>
+</div>
+
+<nav>
+    <a href="index.html">Menu</a>
+    <a href="liste-courses.html" class="active">Liste de courses</a>
+</nav>
+
+<div class="container">
+
+    <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
+    <div class="progress-text" id="progress-text">0 / 0 articles cochés</div>
+
+    <!-- Protéines -->
+    <div class="category">
+        <div class="category-header">
+            <div class="category-icon">🐟</div>
+            <div class="category-title">Protéines</div>
+            <div class="category-cost">~22 €</div>
+        </div>
+        <div class="items">
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Œufs</div>
+                <div class="item-qty">2 × 12 (24)</div>
+                <div class="item-use">Pdj + gratin + pad thaï</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Sardines en conserve (huile d'olive)</div>
+                <div class="item-qty">6 boîtes</div>
+                <div class="item-use">Bowl lentilles</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Thon en conserve (au naturel)</div>
+                <div class="item-qty">2 boîtes</div>
+                <div class="item-use">Gratin pâtes</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Cabillaud surgelé (filets)</div>
+                <div class="item-qty">400g</div>
+                <div class="item-use">Curry</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Tofu ferme</div>
+                <div class="item-qty">3 blocs (≈600g)</div>
+                <div class="item-use">Pad thaï × 2</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Légumineuses & féculents -->
+    <div class="category">
+        <div class="category-header">
+            <div class="category-icon">🌾</div>
+            <div class="category-title">Légumineuses & féculents</div>
+            <div class="category-cost">~10 €</div>
+        </div>
+        <div class="items">
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Lentilles vertes sèches</div>
+                <div class="item-qty">800g</div>
+                <div class="item-use">Bowl</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Pois chiches en conserve</div>
+                <div class="item-qty">4 boîtes</div>
+                <div class="item-use">Curry + houmous collation</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Riz basmati</div>
+                <div class="item-qty">1 kg</div>
+                <div class="item-use">Curry + base</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Pâtes (penne ou fusilli)</div>
+                <div class="item-qty">500g</div>
+                <div class="item-use">Gratin</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Nouilles de riz (pad thaï)</div>
+                <div class="item-qty">2 × 300g</div>
+                <div class="item-use">Pad thaï × 2</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Flocons d'avoine</div>
+                <div class="item-qty">1 kg</div>
+                <div class="item-use">Petit-déj quotidien</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Galettes de riz</div>
+                <div class="item-qty">1 paquet</div>
+                <div class="item-use">Collation</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fruits & légumes -->
+    <div class="category">
+        <div class="category-header">
+            <div class="category-icon">🥬</div>
+            <div class="category-title">Fruits & légumes</div>
+            <div class="category-cost">~13 €</div>
+        </div>
+        <div class="items">
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Bananes</div>
+                <div class="item-qty">≈10</div>
+                <div class="item-use">Pdj + collation</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Épinards frais</div>
+                <div class="item-qty">500g</div>
+                <div class="item-use">Curry + gratin</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Tomates</div>
+                <div class="item-qty">4 moyennes</div>
+                <div class="item-use">Bowl</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Concombre</div>
+                <div class="item-qty">2</div>
+                <div class="item-use">Bowl</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Carottes</div>
+                <div class="item-qty">4</div>
+                <div class="item-use">Pad thaï</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Pousses de soja / germes</div>
+                <div class="item-qty">400g</div>
+                <div class="item-use">Pad thaï</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Oignon rouge</div>
+                <div class="item-qty">2</div>
+                <div class="item-use">Bowl</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Oignons jaunes</div>
+                <div class="item-qty">3</div>
+                <div class="item-use">Curry + gratin</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Oignons verts</div>
+                <div class="item-qty">1 botte</div>
+                <div class="item-use">Pad thaï</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Citrons</div>
+                <div class="item-qty">3</div>
+                <div class="item-use">Bowl + vinaigrette</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Citrons verts</div>
+                <div class="item-qty">4</div>
+                <div class="item-use">Curry + pad thaï</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Ail</div>
+                <div class="item-qty">1 tête</div>
+                <div class="item-use">Curry + gratin</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Gingembre frais</div>
+                <div class="item-qty">1 morceau</div>
+                <div class="item-use">Curry</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Persil frais</div>
+                <div class="item-qty">1 bouquet</div>
+                <div class="item-use">Bowl</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Fruits de saison (pommes, oranges…)</div>
+                <div class="item-qty">≈6</div>
+                <div class="item-use">Collation</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Épicerie -->
+    <div class="category">
+        <div class="category-header">
+            <div class="category-icon">🫙</div>
+            <div class="category-title">Épicerie & condiments</div>
+            <div class="category-cost">~12 €</div>
+        </div>
+        <div class="items">
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Lait de coco</div>
+                <div class="item-qty">2 boîtes (400ml)</div>
+                <div class="item-use">Curry × 2</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Lait d'avoine</div>
+                <div class="item-qty">3 L</div>
+                <div class="item-use">Pdj + gratin</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Beurre de cacahuète</div>
+                <div class="item-qty">1 pot</div>
+                <div class="item-use">Pdj + pad thaï + collation</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Cacahuètes concassées</div>
+                <div class="item-qty">120g</div>
+                <div class="item-use">Pad thaï</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Amandes / noix mélangées</div>
+                <div class="item-qty">200g</div>
+                <div class="item-use">Collation</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Huile d'olive</div>
+                <div class="item-qty">vérifier stock</div>
+                <div class="item-use">Bowl + gratin + base</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Huile de sésame</div>
+                <div class="item-qty">1 petite bouteille</div>
+                <div class="item-use">Pad thaï</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Sauce soja</div>
+                <div class="item-qty">vérifier stock</div>
+                <div class="item-use">Pad thaï</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Vinaigre de riz</div>
+                <div class="item-qty">1 petite bouteille</div>
+                <div class="item-use">Pad thaï</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Pâte de curry (jaune ou rouge)</div>
+                <div class="item-qty">1 pot</div>
+                <div class="item-use">Curry</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Levure nutritionnelle</div>
+                <div class="item-qty">1 sachet</div>
+                <div class="item-use">Gratin (remplace fromage)</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Moutarde de Dijon</div>
+                <div class="item-qty">vérifier stock</div>
+                <div class="item-use">Gratin</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Chapelure</div>
+                <div class="item-qty">1 paquet</div>
+                <div class="item-use">Gratin</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Cumin moulu</div>
+                <div class="item-qty">vérifier stock</div>
+                <div class="item-use">Bowl</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Sriracha</div>
+                <div class="item-qty">vérifier stock</div>
+                <div class="item-use">Pad thaï</div>
+            </div>
+            <div class="item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <div class="item-name">Sirop d'érable (ou sucre)</div>
+                <div class="item-qty">vérifier stock</div>
+                <div class="item-use">Pad thaï</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bilan -->
+    <div class="summary">
+        <h3>Bilan budget estimé</h3>
+        <div class="summary-row"><span>Protéines (œufs, poisson, tofu)</span><span>~22 €</span></div>
+        <div class="summary-row"><span>Légumineuses & féculents</span><span>~10 €</span></div>
+        <div class="summary-row"><span>Fruits & légumes</span><span>~13 €</span></div>
+        <div class="summary-row"><span>Épicerie & condiments</span><span>~12 €</span></div>
+        <div class="summary-row"><span>Total estimé</span><span>~57-68 €</span></div>
+    </div>
+
+</div>
+
+<div class="footer">
+    Mis à jour le 26 avril 2026 · Les articles "vérifier stock" sont des basiques à racheter si épuisés
+</div>
+
+<script>
+    function toggleItem(el) {
+        el.classList.toggle('checked');
+        updateProgress();
+        saveState();
+    }
+
+    function updateProgress() {
+        const total = document.querySelectorAll('.item').length;
+        const checked = document.querySelectorAll('.item.checked').length;
+        document.getElementById('progress').style.width = (checked / total * 100) + '%';
+        document.getElementById('progress-text').textContent = checked + ' / ' + total + ' articles cochés';
+    }
+
+    function saveState() {
+        const items = document.querySelectorAll('.item');
+        const state = Array.from(items).map(i => i.classList.contains('checked'));
+        localStorage.setItem('courses-2026-w18', JSON.stringify(state));
+    }
+
+    function loadState() {
+        const saved = localStorage.getItem('courses-2026-w18');
+        if (saved) {
+            const state = JSON.parse(saved);
+            const items = document.querySelectorAll('.item');
+            state.forEach((checked, i) => {
+                if (checked && items[i]) items[i].classList.add('checked');
+            });
+        }
+        updateProgress();
+    }
+
+    loadState();
+</script>
+
+</body>
+</html>
