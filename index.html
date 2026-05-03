@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu de la semaine — 27 avril au 3 mai 2026</title>
+    <title>Menu de la semaine — 4 au 10 mai 2026</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -136,9 +136,8 @@
             border-bottom: 1px solid #f5f5f0;
         }
         .daily-base li:last-child { border: none; }
-        .daily-base li::before { content: "• "; color: #2d8a56; font-weight: bold; }
+        .daily-base li::before { content: "\2022 "; color: #2d8a56; font-weight: bold; }
 
-        /* Recipe modal */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -220,8 +219,8 @@
 
 <div class="header">
     <h1>Menu de la semaine</h1>
-    <div class="week">27 avril — 3 mai 2026</div>
-    <div class="subtitle">Pescétarien · Sans produits laitiers · 2 personnes</div>
+    <div class="week">4 — 10 mai 2026</div>
+    <div class="subtitle">Pescetarien · Sans produits laitiers · 2 personnes</div>
 </div>
 
 <nav>
@@ -232,105 +231,105 @@
 <div class="container">
 
     <div class="info-box">
-        <strong>4 plats</strong> pour la semaine, chacun cuisiné une fois et servi 2 à 3 fois. Cliquez sur un plat pour voir la recette.
-        Portions adaptées : Jad (prise de masse ~2800 kcal) + accompagnant·e (~2000 kcal).
+        <strong>4 plats</strong> pour la semaine, chacun cuisine une fois et servi 2 a 3 fois. Cliquez sur un plat pour voir la recette.
+        Portions adaptees : Jad (prise de masse ~2800 kcal) + accompagnant·e (~2000 kcal).
     </div>
 
     <div class="planning">
         <div class="day-row">
-            <div class="day-label">Lundi<br>27 avr.</div>
-            <div class="meal-cell" onclick="openRecipe('bowl')">
-                <div class="label">Déjeuner</div>
-                <div class="name">Bowl lentilles & sardines</div>
+            <div class="day-label">Lundi<br>4 mai</div>
+            <div class="meal-cell" onclick="openRecipe('saumon')">
+                <div class="label">Dejeuner</div>
+                <div class="name">Saumon teriyaki, edamames & riz</div>
                 <div class="tag">30 min</div>
             </div>
-            <div class="meal-cell" onclick="openRecipe('padthai')">
-                <div class="label">Dîner</div>
-                <div class="name">Pad thaï au tofu</div>
+            <div class="meal-cell" onclick="openRecipe('shakshuka')">
+                <div class="label">Diner</div>
+                <div class="name">Shakshuka aux haricots blancs</div>
                 <div class="tag">25 min</div>
             </div>
         </div>
 
         <div class="day-row">
-            <div class="day-label">Mardi<br>28 avr.</div>
-            <div class="meal-cell" onclick="openRecipe('curry')">
-                <div class="label">Déjeuner</div>
-                <div class="name">Curry pois chiches & cabillaud</div>
+            <div class="day-label">Mardi<br>5 mai</div>
+            <div class="meal-cell" onclick="openRecipe('tacos')">
+                <div class="label">Dejeuner</div>
+                <div class="name">Tacos tempeh & haricots noirs</div>
+                <div class="tag">30 min</div>
+            </div>
+            <div class="meal-cell" onclick="openRecipe('saumon')">
+                <div class="label">Diner</div>
+                <div class="name">Saumon teriyaki, edamames & riz</div>
+                <div class="tag">restes</div>
+            </div>
+        </div>
+
+        <div class="day-row">
+            <div class="day-label">Mercredi<br>6 mai</div>
+            <div class="meal-cell" onclick="openRecipe('shakshuka')">
+                <div class="label">Dejeuner</div>
+                <div class="name">Shakshuka aux haricots blancs</div>
+                <div class="tag">restes</div>
+            </div>
+            <div class="meal-cell" onclick="openRecipe('risotto')">
+                <div class="label">Diner</div>
+                <div class="name">Risotto crevettes & asperges</div>
                 <div class="tag">35 min</div>
             </div>
-            <div class="meal-cell" onclick="openRecipe('padthai')">
-                <div class="label">Dîner</div>
-                <div class="name">Pad thaï au tofu</div>
+        </div>
+
+        <div class="day-row">
+            <div class="day-label">Jeudi<br>7 mai</div>
+            <div class="meal-cell" onclick="openRecipe('tacos')">
+                <div class="label">Dejeuner</div>
+                <div class="name">Tacos tempeh & haricots noirs</div>
+                <div class="tag">restes</div>
+            </div>
+            <div class="meal-cell" onclick="openRecipe('risotto')">
+                <div class="label">Diner</div>
+                <div class="name">Risotto crevettes & asperges</div>
                 <div class="tag">restes</div>
             </div>
         </div>
 
         <div class="day-row">
-            <div class="day-label">Mercredi<br>29 avr.</div>
-            <div class="meal-cell" onclick="openRecipe('bowl')">
-                <div class="label">Déjeuner</div>
-                <div class="name">Bowl lentilles & sardines</div>
-                <div class="tag">restes</div>
+            <div class="day-label">Vendredi<br>8 mai</div>
+            <div class="meal-cell" onclick="openRecipe('saumon')">
+                <div class="label">Dejeuner</div>
+                <div class="name">Saumon teriyaki, edamames & riz</div>
+                <div class="tag">recuisiner</div>
             </div>
-            <div class="meal-cell" onclick="openRecipe('gratin')">
-                <div class="label">Dîner</div>
-                <div class="name">Gratin pâtes, œufs & épinards</div>
-                <div class="tag">40 min</div>
-            </div>
-        </div>
-
-        <div class="day-row">
-            <div class="day-label">Jeudi<br>30 avr.</div>
-            <div class="meal-cell" onclick="openRecipe('curry')">
-                <div class="label">Déjeuner</div>
-                <div class="name">Curry pois chiches & cabillaud</div>
-                <div class="tag">restes</div>
-            </div>
-            <div class="meal-cell" onclick="openRecipe('gratin')">
-                <div class="label">Dîner</div>
-                <div class="name">Gratin pâtes, œufs & épinards</div>
-                <div class="tag">restes</div>
-            </div>
-        </div>
-
-        <div class="day-row">
-            <div class="day-label">Vendredi<br>1 mai</div>
-            <div class="meal-cell" onclick="openRecipe('bowl')">
-                <div class="label">Déjeuner</div>
-                <div class="name">Bowl lentilles & sardines</div>
-                <div class="tag">restes</div>
-            </div>
-            <div class="meal-cell" onclick="openRecipe('padthai')">
-                <div class="label">Dîner</div>
-                <div class="name">Pad thaï au tofu</div>
+            <div class="meal-cell" onclick="openRecipe('shakshuka')">
+                <div class="label">Diner</div>
+                <div class="name">Shakshuka aux haricots blancs</div>
                 <div class="tag">recuisiner</div>
             </div>
         </div>
 
         <div class="day-row">
-            <div class="day-label">Samedi<br>2 mai</div>
-            <div class="meal-cell" onclick="openRecipe('curry')">
-                <div class="label">Déjeuner</div>
-                <div class="name">Curry pois chiches & cabillaud</div>
+            <div class="day-label">Samedi<br>9 mai</div>
+            <div class="meal-cell" onclick="openRecipe('risotto')">
+                <div class="label">Dejeuner</div>
+                <div class="name">Risotto crevettes & asperges</div>
                 <div class="tag">recuisiner</div>
             </div>
-            <div class="meal-cell" onclick="openRecipe('gratin')">
-                <div class="label">Dîner</div>
-                <div class="name">Gratin pâtes, œufs & épinards</div>
-                <div class="tag">restes</div>
+            <div class="meal-cell" onclick="openRecipe('tacos')">
+                <div class="label">Diner</div>
+                <div class="name">Tacos tempeh & haricots noirs</div>
+                <div class="tag">recuisiner</div>
             </div>
         </div>
 
         <div class="day-row">
-            <div class="day-label">Dimanche<br>3 mai</div>
-            <div class="meal-cell" onclick="openRecipe('bowl')">
-                <div class="label">Déjeuner</div>
-                <div class="name">Bowl lentilles & sardines</div>
-                <div class="tag">recuisiner</div>
+            <div class="day-label">Dimanche<br>10 mai</div>
+            <div class="meal-cell" onclick="openRecipe('saumon')">
+                <div class="label">Dejeuner</div>
+                <div class="name">Saumon teriyaki, edamames & riz</div>
+                <div class="tag">restes</div>
             </div>
-            <div class="meal-cell" onclick="openRecipe('curry')">
-                <div class="label">Dîner</div>
-                <div class="name">Curry pois chiches & cabillaud</div>
+            <div class="meal-cell" onclick="openRecipe('risotto')">
+                <div class="label">Diner</div>
+                <div class="name">Risotto crevettes & asperges</div>
                 <div class="tag">restes</div>
             </div>
         </div>
@@ -339,184 +338,186 @@
     <div class="daily-base">
         <h3>Base quotidienne (chaque jour)</h3>
         <ul>
-            <li><strong>Petit-déjeuner :</strong> 100g flocons d'avoine + lait d'avoine + 3 œufs brouillés + 1 banane + 1 c.à.s. beurre de cacahuète (~700 kcal, 40g prot.)</li>
+            <li><strong>Petit-dejeuner :</strong> 100g flocons d'avoine + lait d'avoine + 3 oeufs brouilles + 1 banane + 1 c.a.s. beurre de cacahuete (~700 kcal, 40g prot.)</li>
             <li><strong>Collation Jad :</strong> Houmous maison (pois chiches) + galettes de riz + 30g amandes + 1 fruit (~400 kcal, 18g prot.)</li>
-            <li><strong>Collation soir Jad :</strong> Tartines + beurre de cacahuète + 1 banane (~250 kcal, 10g prot.) — si besoin d'atteindre les 2800 kcal</li>
+            <li><strong>Collation soir Jad :</strong> Tartines + beurre de cacahuete + 1 banane (~250 kcal, 10g prot.) — si besoin d'atteindre les 2800 kcal</li>
         </ul>
     </div>
 
 </div>
 
 <!-- Recipe Modals -->
-<div class="modal-overlay" id="modal-bowl">
+<div class="modal-overlay" id="modal-saumon">
     <div class="modal">
-        <button class="modal-close" onclick="closeRecipe('bowl')">✕</button>
-        <h2>Bowl lentilles & sardines méditerranéen</h2>
-        <div class="meta">Pour 4 portions · 30 min · Budget : ~5€</div>
+        <button class="modal-close" onclick="closeRecipe('saumon')">&#10005;</button>
+        <h2>Saumon teriyaki, edamames & riz</h2>
+        <div class="meta">Pour 4 portions · 30 min · Budget : ~8 EUR</div>
+        <div class="macros">
+            <span class="macro-tag">540 kcal/portion</span>
+            <span class="macro-tag">36g proteines</span>
+            <span class="macro-tag">52g glucides</span>
+            <span class="macro-tag">18g lipides</span>
+        </div>
+        <h3>Ingredients</h3>
+        <ul>
+            <li>500g paves de saumon (frais ou surgeles)</li>
+            <li>200g edamames decortiques (surgeles)</li>
+            <li>250g riz basmati</li>
+            <li>2 carottes, taillees en julienne</li>
+            <li>200g brocoli, en petits bouquets</li>
+            <li>2 oignons verts, eminces</li>
+            <li>1 c.a.s. graines de sesame</li>
+            <li><strong>Sauce teriyaki :</strong> 4 c.a.s. sauce soja, 2 c.a.s. sirop d'erable, 1 c.a.s. vinaigre de riz, 1 c.a.c. maizena, 1 gousse d'ail rapee, 1 cm gingembre rape</li>
+        </ul>
+        <h3>Preparation</h3>
+        <ol>
+            <li>Cuire le riz selon les instructions. En parallele, cuire les edamames et le brocoli a la vapeur ou dans l'eau bouillante 5 min.</li>
+            <li>Melanger les ingredients de la sauce teriyaki dans un bol.</li>
+            <li>Couper le saumon en morceaux de 3 cm. Saisir dans une poele chaude huilee 3 min de chaque cote.</li>
+            <li>Verser la sauce teriyaki sur le saumon, laisser epaissir 2 min a feu moyen.</li>
+            <li>Dresser : riz, edamames, brocoli, carottes crues en julienne, saumon nappe de sauce.</li>
+            <li>Parsemer d'oignons verts et graines de sesame.</li>
+        </ol>
+        <h3>Notes</h3>
+        <ul>
+            <li>Conserver riz et garnitures separement du saumon. Se conserve 3 jours au frigo.</li>
+            <li><strong>Jad</strong> : 180g riz cru + saumon genereux (~200g). <strong>Accompagnant·e</strong> : 100g riz + ~130g saumon.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="modal-overlay" id="modal-shakshuka">
+    <div class="modal">
+        <button class="modal-close" onclick="closeRecipe('shakshuka')">&#10005;</button>
+        <h2>Shakshuka aux haricots blancs</h2>
+        <div class="meta">Pour 4 portions · 25 min · Budget : ~5 EUR</div>
         <div class="macros">
             <span class="macro-tag">520 kcal/portion</span>
-            <span class="macro-tag">38g protéines</span>
-            <span class="macro-tag">55g glucides</span>
-            <span class="macro-tag">14g lipides</span>
+            <span class="macro-tag">32g proteines</span>
+            <span class="macro-tag">48g glucides</span>
+            <span class="macro-tag">18g lipides</span>
         </div>
-        <h3>Ingrédients</h3>
+        <h3>Ingredients</h3>
         <ul>
-            <li>400g lentilles vertes sèches</li>
-            <li>3 boîtes de sardines à l'huile d'olive (375g net égoutté)</li>
-            <li>2 tomates moyennes, coupées en dés</li>
-            <li>1 concombre, coupé en dés</li>
-            <li>1 oignon rouge, émincé fin</li>
-            <li>1 bouquet de persil frais, haché</li>
-            <li>2 c.à.s. huile d'olive</li>
-            <li>Jus de 1 citron</li>
-            <li>1 c.à.c. cumin moulu</li>
-            <li>Sel, poivre</li>
+            <li>8 oeufs</li>
+            <li>2 boites de haricots blancs (480g egouttes)</li>
+            <li>2 boites de tomates concassees (800g)</li>
+            <li>2 poivrons rouges, coupes en des</li>
+            <li>1 oignon, emince</li>
+            <li>3 gousses d'ail, hachees</li>
+            <li>2 c.a.c. cumin moulu</li>
+            <li>2 c.a.c. paprika fume</li>
+            <li>1 c.a.c. piment d'Espelette (ou chili)</li>
+            <li>2 c.a.s. huile d'olive</li>
+            <li>Persil frais, hache</li>
+            <li>4-6 tranches de pain complet (pour servir)</li>
         </ul>
-        <h3>Préparation</h3>
+        <h3>Preparation</h3>
         <ol>
-            <li>Cuire les lentilles dans 3× leur volume d'eau salée, ~20 min. Égoutter et laisser tiédir.</li>
-            <li>Préparer la vinaigrette : huile d'olive + jus de citron + cumin + sel + poivre.</li>
-            <li>Mélanger les lentilles avec les tomates, concombre, oignon rouge, persil.</li>
-            <li>Émietter les sardines égouttées par-dessus.</li>
-            <li>Arroser de vinaigrette et mélanger délicatement.</li>
+            <li>Faire revenir l'oignon et les poivrons dans l'huile d'olive 5 min. Ajouter l'ail et les epices, cuire 1 min.</li>
+            <li>Ajouter les tomates concassees et les haricots blancs egouttes. Saler, poivrer. Laisser mijoter 10 min.</li>
+            <li>Creer 8 puits dans la sauce, casser un oeuf dans chaque puits.</li>
+            <li>Couvrir et cuire 5-7 min a feu doux jusqu'a ce que les blancs soient pris (jaunes encore coulants).</li>
+            <li>Parsemer de persil. Servir avec du pain complet grille.</li>
         </ol>
         <h3>Notes</h3>
         <ul>
-            <li>Se conserve 3 jours au frigo. Sortir 15 min avant de servir.</li>
-            <li><strong>Jad</strong> : servir ~350g de lentilles + sardines complètes. <strong>Accompagnant·e</strong> : ~200g de lentilles + moitié des sardines.</li>
+            <li>La sauce se conserve 3 jours. Pour recuisiner : rechauffer la sauce et casser de nouveaux oeufs dedans.</li>
+            <li><strong>Jad</strong> : 3 oeufs + sauce genereuse + 2 tranches de pain. <strong>Accompagnant·e</strong> : 2 oeufs + sauce + 1 tranche.</li>
         </ul>
     </div>
 </div>
 
-<div class="modal-overlay" id="modal-curry">
+<div class="modal-overlay" id="modal-tacos">
     <div class="modal">
-        <button class="modal-close" onclick="closeRecipe('curry')">✕</button>
-        <h2>Curry de pois chiches & cabillaud au lait de coco</h2>
-        <div class="meta">Pour 4 portions · 35 min · Budget : ~7€</div>
+        <button class="modal-close" onclick="closeRecipe('tacos')">&#10005;</button>
+        <h2>Tacos de tempeh & haricots noirs</h2>
+        <div class="meta">Pour 4 portions · 30 min · Budget : ~7 EUR</div>
         <div class="macros">
-            <span class="macro-tag">560 kcal/portion</span>
-            <span class="macro-tag">35g protéines</span>
-            <span class="macro-tag">52g glucides</span>
-            <span class="macro-tag">20g lipides</span>
+            <span class="macro-tag">530 kcal/portion</span>
+            <span class="macro-tag">34g proteines</span>
+            <span class="macro-tag">50g glucides</span>
+            <span class="macro-tag">18g lipides</span>
         </div>
-        <h3>Ingrédients</h3>
+        <h3>Ingredients</h3>
         <ul>
-            <li>400g filets de cabillaud surgelés</li>
-            <li>2 boîtes de pois chiches (480g égouttés)</li>
-            <li>1 boîte de lait de coco (400ml)</li>
-            <li>200g épinards frais (ou surgelés)</li>
-            <li>1 oignon, émincé</li>
-            <li>3 gousses d'ail, hachées</li>
-            <li>1 morceau de gingembre frais (3cm), râpé</li>
-            <li>2 c.à.s. pâte de curry (jaune ou rouge)</li>
-            <li>200g riz basmati (pour servir)</li>
-            <li>1 c.à.s. huile de colza</li>
-            <li>Jus de 1/2 citron vert</li>
-            <li>Coriandre fraîche (optionnel)</li>
+            <li>400g tempeh, emiette</li>
+            <li>1 boite de haricots noirs (240g egouttes)</li>
+            <li>8-12 tortillas de ble ou mais</li>
+            <li>2 avocats murs</li>
+            <li>200g tomates cerises, coupees en deux</li>
+            <li>1/2 chou rouge, emince fin</li>
+            <li>1 oignon, emince</li>
+            <li>Jus de 2 citrons verts</li>
+            <li>Coriandre fraiche</li>
+            <li><strong>Epices :</strong> 2 c.a.c. cumin, 1 c.a.c. paprika fume, 1 c.a.c. poudre de chili, 1/2 c.a.c. origan</li>
+            <li>2 c.a.s. sauce soja</li>
+            <li>1 c.a.s. huile de colza</li>
         </ul>
-        <h3>Préparation</h3>
+        <h3>Preparation</h3>
         <ol>
-            <li>Lancer le riz selon les instructions du paquet.</li>
-            <li>Faire revenir l'oignon dans l'huile 3 min. Ajouter ail, gingembre et pâte de curry, cuire 1 min.</li>
-            <li>Ajouter le lait de coco et les pois chiches égouttés. Porter à frémissement.</li>
-            <li>Couper le cabillaud en morceaux de 3cm, l'ajouter au curry. Cuire 8-10 min à feu moyen.</li>
-            <li>Ajouter les épinards, cuire 2 min jusqu'à ce qu'ils fondent.</li>
-            <li>Jus de citron vert, sel, poivre. Servir sur le riz.</li>
+            <li>Emietter le tempeh. Le faire revenir dans l'huile avec l'oignon 5 min.</li>
+            <li>Ajouter les epices et la sauce soja, cuire 2 min. Ajouter les haricots noirs egouttes, cuire 3 min.</li>
+            <li>Preparer le guacamole : ecraser les avocats + jus de citron vert + sel.</li>
+            <li>Emincer le chou rouge, l'assaisonner avec un filet de citron vert.</li>
+            <li>Rechauffer les tortillas 30 sec a la poele seche.</li>
+            <li>Assembler : tortilla + garniture tempeh-haricots + guacamole + chou rouge + tomates + coriandre.</li>
         </ol>
         <h3>Notes</h3>
         <ul>
-            <li>Se réchauffe très bien. Conserver riz et curry séparément.</li>
-            <li><strong>Jad</strong> : portion généreuse de riz (~180g cru) + curry complet. <strong>Accompagnant·e</strong> : ~100g riz + curry.</li>
+            <li>La garniture tempeh-haricots se conserve 3 jours. Preparer le guacamole frais au moment de servir.</li>
+            <li><strong>Jad</strong> : 3-4 tacos genereux. <strong>Accompagnant·e</strong> : 2-3 tacos.</li>
         </ul>
     </div>
 </div>
 
-<div class="modal-overlay" id="modal-padthai">
+<div class="modal-overlay" id="modal-risotto">
     <div class="modal">
-        <button class="modal-close" onclick="closeRecipe('padthai')">✕</button>
-        <h2>Pad thaï au tofu & œufs</h2>
-        <div class="meta">Pour 4 portions · 25 min · Budget : ~6€</div>
+        <button class="modal-close" onclick="closeRecipe('risotto')">&#10005;</button>
+        <h2>Risotto crevettes & asperges au lait de coco</h2>
+        <div class="meta">Pour 4 portions · 35 min · Budget : ~8 EUR</div>
         <div class="macros">
-            <span class="macro-tag">510 kcal/portion</span>
-            <span class="macro-tag">30g protéines</span>
+            <span class="macro-tag">550 kcal/portion</span>
+            <span class="macro-tag">32g proteines</span>
             <span class="macro-tag">58g glucides</span>
             <span class="macro-tag">16g lipides</span>
         </div>
-        <h3>Ingrédients</h3>
+        <h3>Ingredients</h3>
         <ul>
-            <li>300g nouilles de riz (pad thaï)</li>
-            <li>400g tofu ferme, coupé en cubes</li>
-            <li>4 œufs</li>
-            <li>2 carottes, râpées</li>
-            <li>200g pousses de soja (ou germes de haricot mungo)</li>
-            <li>4 oignons verts, émincés</li>
-            <li>60g cacahuètes concassées</li>
-            <li>2 citrons verts</li>
-            <li><strong>Sauce :</strong> 3 c.à.s. sauce soja, 2 c.à.s. beurre de cacahuète, 1 c.à.s. sirop d'érable (ou sucre), 1 c.à.s. huile de sésame, 1 c.à.s. vinaigre de riz, sriracha au goût</li>
+            <li>400g crevettes decortiquees (fraiches ou surgelees)</li>
+            <li>300g riz arborio (ou riz rond)</li>
+            <li>1 botte d'asperges vertes (~300g), coupees en troncons de 3 cm</li>
+            <li>200ml lait de coco</li>
+            <li>800ml bouillon de legumes chaud</li>
+            <li>1 oignon, emince fin</li>
+            <li>2 gousses d'ail, hachees</li>
+            <li>100ml vin blanc sec (ou jus de citron + bouillon)</li>
+            <li>2 c.a.s. levure nutritionnelle</li>
+            <li>2 c.a.s. huile d'olive</li>
+            <li>Zeste de 1 citron</li>
+            <li>Sel, poivre</li>
         </ul>
-        <h3>Préparation</h3>
+        <h3>Preparation</h3>
         <ol>
-            <li>Tremper les nouilles de riz dans l'eau chaude 8 min (ou selon paquet). Égoutter.</li>
-            <li>Mélanger tous les ingrédients de la sauce dans un bol.</li>
-            <li>Faire dorer le tofu à feu vif dans une grande poêle/wok huilé, 5 min. Réserver.</li>
-            <li>Dans la même poêle, brouiller les 4 œufs. Réserver avec le tofu.</li>
-            <li>Sauter les carottes et pousses de soja 2 min.</li>
-            <li>Ajouter les nouilles, la sauce, le tofu et les œufs. Mélanger 2 min à feu vif.</li>
-            <li>Servir avec cacahuètes, oignons verts et quartiers de citron vert.</li>
+            <li>Faire revenir l'oignon dans l'huile d'olive 3 min. Ajouter l'ail, cuire 1 min.</li>
+            <li>Ajouter le riz arborio, nacrer 2 min en remuant.</li>
+            <li>Deglacer au vin blanc. Ajouter le bouillon louche par louche en remuant regulierement (~18 min).</li>
+            <li>A mi-cuisson, ajouter les asperges.</li>
+            <li>En parallele, saisir les crevettes dans une poele chaude 2 min de chaque cote. Saler, poivrer.</li>
+            <li>En fin de cuisson du riz, incorporer le lait de coco et la levure nutritionnelle. Remuer.</li>
+            <li>Dresser le risotto, disposer les crevettes par-dessus, zeste de citron.</li>
         </ol>
         <h3>Notes</h3>
         <ul>
-            <li>Cuisiner 2 fois dans la semaine (lun-mar + ven) pour garder la fraîcheur des nouilles.</li>
-            <li><strong>Jad</strong> : portion XL (~400g). <strong>Accompagnant·e</strong> : portion normale (~250g).</li>
-        </ul>
-    </div>
-</div>
-
-<div class="modal-overlay" id="modal-gratin">
-    <div class="modal">
-        <button class="modal-close" onclick="closeRecipe('gratin')">✕</button>
-        <h2>Gratin de pâtes aux œufs & épinards</h2>
-        <div class="meta">Pour 4 portions · 40 min · Budget : ~5€</div>
-        <div class="macros">
-            <span class="macro-tag">540 kcal/portion</span>
-            <span class="macro-tag">32g protéines</span>
-            <span class="macro-tag">60g glucides</span>
-            <span class="macro-tag">16g lipides</span>
-        </div>
-        <h3>Ingrédients</h3>
-        <ul>
-            <li>400g pâtes (penne ou fusilli)</li>
-            <li>6 œufs</li>
-            <li>300g épinards frais (ou 200g surgelés)</li>
-            <li>1 boîte de thon au naturel (200g égouttés)</li>
-            <li>200ml lait d'avoine</li>
-            <li>2 c.à.s. levure nutritionnelle (pour le goût "fromager")</li>
-            <li>1 c.à.s. moutarde de Dijon</li>
-            <li>2 gousses d'ail, hachées</li>
-            <li>40g chapelure</li>
-            <li>2 c.à.s. huile d'olive</li>
-            <li>Noix de muscade, sel, poivre</li>
-        </ul>
-        <h3>Préparation</h3>
-        <ol>
-            <li>Préchauffer le four à 200°C. Cuire les pâtes al dente, égoutter.</li>
-            <li>Faire revenir l'ail dans l'huile d'olive 1 min. Ajouter les épinards, cuire jusqu'à ce qu'ils fondent (3 min).</li>
-            <li>Battre les œufs avec le lait d'avoine, la levure nutritionnelle, la moutarde, sel, poivre, muscade.</li>
-            <li>Mélanger pâtes + épinards + thon émietté dans un plat à gratin.</li>
-            <li>Verser le mélange œufs par-dessus. Saupoudrer de chapelure.</li>
-            <li>Enfourner 20 min jusqu'à ce que le dessus soit doré.</li>
-        </ol>
-        <h3>Notes</h3>
-        <ul>
-            <li>Se conserve 3 jours au frigo, se réchauffe au four 10 min à 180°C.</li>
-            <li>La levure nutritionnelle remplace le fromage râpé : goût umami sans produit laitier.</li>
-            <li><strong>Jad</strong> : 1/3 du plat. <strong>Accompagnant·e</strong> : 1/4 du plat.</li>
+            <li>Le risotto se conserve 3 jours. Rechauffer a la poele avec un peu de bouillon pour redonner de l'onctuosite.</li>
+            <li>La levure nutritionnelle apporte un gout umami/fromager sans produit laitier.</li>
+            <li><strong>Jad</strong> : portion XL (~400g risotto + crevettes genereuses). <strong>Accompagnant·e</strong> : ~280g.</li>
         </ul>
     </div>
 </div>
 
 <div class="footer">
-    Mis à jour le 26 avril 2026 · Menu adapté au programme sportif de Jad
+    Mis a jour le 3 mai 2026 · Menu adapte au programme sportif de Jad
 </div>
 
 <script>
