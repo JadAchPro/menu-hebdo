@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu de la semaine — 4 au 10 mai 2026</title>
+    <title>Menu de la semaine</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -37,18 +37,10 @@
             font-size: 0.9rem;
             transition: all 0.2s;
         }
-        nav a.active {
-            background: #1a5632;
-            color: white;
-        }
-        nav a:not(.active) {
-            background: white;
-            color: #1a5632;
-            border: 1px solid #1a5632;
-        }
+        nav a.active { background: #1a5632; color: white; }
+        nav a:not(.active) { background: white; color: #1a5632; border: 1px solid #1a5632; }
         nav a:hover:not(.active) { background: #e8f5ee; }
         .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
-
         .info-box {
             background: #e8f5ee;
             border-left: 4px solid #2d8a56;
@@ -58,12 +50,7 @@
             font-size: 0.9rem;
         }
         .info-box strong { color: #1a5632; }
-
-        .planning {
-            display: grid;
-            gap: 0.5rem;
-            margin-bottom: 2rem;
-        }
+        .planning { display: grid; gap: 0.5rem; margin-bottom: 2rem; }
         .day-row {
             display: grid;
             grid-template-columns: 110px 1fr 1fr;
@@ -89,7 +76,6 @@
             padding: 0.7rem 0.9rem;
             cursor: pointer;
             transition: all 0.2s;
-            position: relative;
         }
         .meal-cell:hover {
             border-color: #2d8a56;
@@ -102,11 +88,7 @@
             color: #888;
             margin-bottom: 0.2rem;
         }
-        .meal-cell .name {
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: #2d2d2d;
-        }
+        .meal-cell .name { font-weight: 600; font-size: 0.95rem; color: #2d2d2d; }
         .meal-cell .tag {
             display: inline-block;
             font-size: 0.7rem;
@@ -116,7 +98,6 @@
             margin-top: 0.3rem;
             color: #666;
         }
-
         .daily-base {
             background: white;
             border: 1px solid #e0dfd8;
@@ -124,11 +105,7 @@
             padding: 1.2rem 1.5rem;
             margin-bottom: 2rem;
         }
-        .daily-base h3 {
-            color: #1a5632;
-            margin-bottom: 0.8rem;
-            font-size: 1.1rem;
-        }
+        .daily-base h3 { color: #1a5632; margin-bottom: 0.8rem; font-size: 1.1rem; }
         .daily-base ul { list-style: none; }
         .daily-base li {
             padding: 0.3rem 0;
@@ -137,7 +114,6 @@
         }
         .daily-base li:last-child { border: none; }
         .daily-base li::before { content: "\2022 "; color: #2d8a56; font-weight: bold; }
-
         .modal-overlay {
             display: none;
             position: fixed;
@@ -161,12 +137,10 @@
         }
         .modal-close {
             position: absolute;
-            top: 1rem;
-            right: 1rem;
+            top: 1rem; right: 1rem;
             background: #f0efe8;
             border: none;
-            width: 36px;
-            height: 36px;
+            width: 36px; height: 36px;
             border-radius: 50%;
             font-size: 1.2rem;
             cursor: pointer;
@@ -182,12 +156,7 @@
         .modal li { font-size: 0.9rem; margin-bottom: 0.3rem; }
         .modal ol { padding-left: 1.2rem; }
         .modal ol li { margin-bottom: 0.5rem; font-size: 0.9rem; }
-        .modal .macros {
-            display: flex;
-            gap: 0.8rem;
-            flex-wrap: wrap;
-            margin: 0.8rem 0;
-        }
+        .modal .macros { display: flex; gap: 0.8rem; flex-wrap: wrap; margin: 0.8rem 0; }
         .modal .macro-tag {
             background: #e8f5ee;
             padding: 0.3rem 0.8rem;
@@ -196,21 +165,10 @@
             font-weight: 600;
             color: #1a5632;
         }
-
-        .footer {
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.8rem;
-            color: #aaa;
-        }
-
+        .footer { text-align: center; padding: 2rem; font-size: 0.8rem; color: #aaa; }
         @media (max-width: 600px) {
-            .day-row {
-                grid-template-columns: 1fr;
-            }
-            .day-label {
-                padding: 0.5rem;
-            }
+            .day-row { grid-template-columns: 1fr; }
+            .day-label { padding: 0.5rem; }
             .header h1 { font-size: 1.4rem; }
         }
     </style>
@@ -219,8 +177,8 @@
 
 <div class="header">
     <h1>Menu de la semaine</h1>
-    <div class="week">4 — 10 mai 2026</div>
-    <div class="subtitle">Pescetarien · Sans produits laitiers · 2 personnes</div>
+    <div class="week" id="h-week"></div>
+    <div class="subtitle" id="h-regime"></div>
 </div>
 
 <nav>
@@ -229,323 +187,118 @@
 </nav>
 
 <div class="container">
-
-    <div class="info-box">
-        <strong>4 plats</strong> pour la semaine, chacun cuisine une fois et servi 2 a 3 fois. Cliquez sur un plat pour voir la recette.
-        Portions adaptees : Jad (prise de masse ~2800 kcal) + accompagnant·e (~2000 kcal).
-    </div>
-
-    <div class="planning">
-        <div class="day-row">
-            <div class="day-label">Lundi<br>4 mai</div>
-            <div class="meal-cell" onclick="openRecipe('saumon')">
-                <div class="label">Dejeuner</div>
-                <div class="name">Saumon teriyaki, edamames & riz</div>
-                <div class="tag">30 min</div>
-            </div>
-            <div class="meal-cell" onclick="openRecipe('shakshuka')">
-                <div class="label">Diner</div>
-                <div class="name">Shakshuka aux haricots blancs</div>
-                <div class="tag">25 min</div>
-            </div>
-        </div>
-
-        <div class="day-row">
-            <div class="day-label">Mardi<br>5 mai</div>
-            <div class="meal-cell" onclick="openRecipe('tacos')">
-                <div class="label">Dejeuner</div>
-                <div class="name">Tacos tempeh & haricots noirs</div>
-                <div class="tag">30 min</div>
-            </div>
-            <div class="meal-cell" onclick="openRecipe('saumon')">
-                <div class="label">Diner</div>
-                <div class="name">Saumon teriyaki, edamames & riz</div>
-                <div class="tag">restes</div>
-            </div>
-        </div>
-
-        <div class="day-row">
-            <div class="day-label">Mercredi<br>6 mai</div>
-            <div class="meal-cell" onclick="openRecipe('shakshuka')">
-                <div class="label">Dejeuner</div>
-                <div class="name">Shakshuka aux haricots blancs</div>
-                <div class="tag">restes</div>
-            </div>
-            <div class="meal-cell" onclick="openRecipe('risotto')">
-                <div class="label">Diner</div>
-                <div class="name">Risotto crevettes & asperges</div>
-                <div class="tag">35 min</div>
-            </div>
-        </div>
-
-        <div class="day-row">
-            <div class="day-label">Jeudi<br>7 mai</div>
-            <div class="meal-cell" onclick="openRecipe('tacos')">
-                <div class="label">Dejeuner</div>
-                <div class="name">Tacos tempeh & haricots noirs</div>
-                <div class="tag">restes</div>
-            </div>
-            <div class="meal-cell" onclick="openRecipe('risotto')">
-                <div class="label">Diner</div>
-                <div class="name">Risotto crevettes & asperges</div>
-                <div class="tag">restes</div>
-            </div>
-        </div>
-
-        <div class="day-row">
-            <div class="day-label">Vendredi<br>8 mai</div>
-            <div class="meal-cell" onclick="openRecipe('saumon')">
-                <div class="label">Dejeuner</div>
-                <div class="name">Saumon teriyaki, edamames & riz</div>
-                <div class="tag">recuisiner</div>
-            </div>
-            <div class="meal-cell" onclick="openRecipe('shakshuka')">
-                <div class="label">Diner</div>
-                <div class="name">Shakshuka aux haricots blancs</div>
-                <div class="tag">recuisiner</div>
-            </div>
-        </div>
-
-        <div class="day-row">
-            <div class="day-label">Samedi<br>9 mai</div>
-            <div class="meal-cell" onclick="openRecipe('risotto')">
-                <div class="label">Dejeuner</div>
-                <div class="name">Risotto crevettes & asperges</div>
-                <div class="tag">recuisiner</div>
-            </div>
-            <div class="meal-cell" onclick="openRecipe('tacos')">
-                <div class="label">Diner</div>
-                <div class="name">Tacos tempeh & haricots noirs</div>
-                <div class="tag">recuisiner</div>
-            </div>
-        </div>
-
-        <div class="day-row">
-            <div class="day-label">Dimanche<br>10 mai</div>
-            <div class="meal-cell" onclick="openRecipe('saumon')">
-                <div class="label">Dejeuner</div>
-                <div class="name">Saumon teriyaki, edamames & riz</div>
-                <div class="tag">restes</div>
-            </div>
-            <div class="meal-cell" onclick="openRecipe('risotto')">
-                <div class="label">Diner</div>
-                <div class="name">Risotto crevettes & asperges</div>
-                <div class="tag">restes</div>
-            </div>
-        </div>
-    </div>
-
+    <div class="info-box" id="info-box"></div>
+    <div class="planning" id="planning"></div>
     <div class="daily-base">
         <h3>Base quotidienne (chaque jour)</h3>
-        <ul>
-            <li><strong>Petit-dejeuner :</strong> 100g flocons d'avoine + lait d'avoine + 3 oeufs brouilles + 1 banane + 1 c.a.s. beurre de cacahuete (~700 kcal, 40g prot.)</li>
-            <li><strong>Collation Jad :</strong> Houmous maison (pois chiches) + galettes de riz + 30g amandes + 1 fruit (~400 kcal, 18g prot.)</li>
-            <li><strong>Collation soir Jad :</strong> Tartines + beurre de cacahuete + 1 banane (~250 kcal, 10g prot.) — si besoin d'atteindre les 2800 kcal</li>
-        </ul>
-    </div>
-
-</div>
-
-<!-- Recipe Modals -->
-<div class="modal-overlay" id="modal-saumon">
-    <div class="modal">
-        <button class="modal-close" onclick="closeRecipe('saumon')">&#10005;</button>
-        <h2>Saumon teriyaki, edamames & riz</h2>
-        <div class="meta">Pour 4 portions · 30 min · Budget : ~8 EUR</div>
-        <div class="macros">
-            <span class="macro-tag">540 kcal/portion</span>
-            <span class="macro-tag">36g proteines</span>
-            <span class="macro-tag">52g glucides</span>
-            <span class="macro-tag">18g lipides</span>
-        </div>
-        <h3>Ingredients</h3>
-        <ul>
-            <li>500g paves de saumon (frais ou surgeles)</li>
-            <li>200g edamames decortiques (surgeles)</li>
-            <li>250g riz basmati</li>
-            <li>2 carottes, taillees en julienne</li>
-            <li>200g brocoli, en petits bouquets</li>
-            <li>2 oignons verts, eminces</li>
-            <li>1 c.a.s. graines de sesame</li>
-            <li><strong>Sauce teriyaki :</strong> 4 c.a.s. sauce soja, 2 c.a.s. sirop d'erable, 1 c.a.s. vinaigre de riz, 1 c.a.c. maizena, 1 gousse d'ail rapee, 1 cm gingembre rape</li>
-        </ul>
-        <h3>Preparation</h3>
-        <ol>
-            <li>Cuire le riz selon les instructions. En parallele, cuire les edamames et le brocoli a la vapeur ou dans l'eau bouillante 5 min.</li>
-            <li>Melanger les ingredients de la sauce teriyaki dans un bol.</li>
-            <li>Couper le saumon en morceaux de 3 cm. Saisir dans une poele chaude huilee 3 min de chaque cote.</li>
-            <li>Verser la sauce teriyaki sur le saumon, laisser epaissir 2 min a feu moyen.</li>
-            <li>Dresser : riz, edamames, brocoli, carottes crues en julienne, saumon nappe de sauce.</li>
-            <li>Parsemer d'oignons verts et graines de sesame.</li>
-        </ol>
-        <h3>Notes</h3>
-        <ul>
-            <li>Conserver riz et garnitures separement du saumon. Se conserve 3 jours au frigo.</li>
-            <li><strong>Jad</strong> : 180g riz cru + saumon genereux (~200g). <strong>Accompagnant·e</strong> : 100g riz + ~130g saumon.</li>
-        </ul>
+        <ul id="base-list"></ul>
     </div>
 </div>
 
-<div class="modal-overlay" id="modal-shakshuka">
-    <div class="modal">
-        <button class="modal-close" onclick="closeRecipe('shakshuka')">&#10005;</button>
-        <h2>Shakshuka aux haricots blancs</h2>
-        <div class="meta">Pour 4 portions · 25 min · Budget : ~5 EUR</div>
-        <div class="macros">
-            <span class="macro-tag">520 kcal/portion</span>
-            <span class="macro-tag">32g proteines</span>
-            <span class="macro-tag">48g glucides</span>
-            <span class="macro-tag">18g lipides</span>
-        </div>
-        <h3>Ingredients</h3>
-        <ul>
-            <li>8 oeufs</li>
-            <li>2 boites de haricots blancs (480g egouttes)</li>
-            <li>2 boites de tomates concassees (800g)</li>
-            <li>2 poivrons rouges, coupes en des</li>
-            <li>1 oignon, emince</li>
-            <li>3 gousses d'ail, hachees</li>
-            <li>2 c.a.c. cumin moulu</li>
-            <li>2 c.a.c. paprika fume</li>
-            <li>1 c.a.c. piment d'Espelette (ou chili)</li>
-            <li>2 c.a.s. huile d'olive</li>
-            <li>Persil frais, hache</li>
-            <li>4-6 tranches de pain complet (pour servir)</li>
-        </ul>
-        <h3>Preparation</h3>
-        <ol>
-            <li>Faire revenir l'oignon et les poivrons dans l'huile d'olive 5 min. Ajouter l'ail et les epices, cuire 1 min.</li>
-            <li>Ajouter les tomates concassees et les haricots blancs egouttes. Saler, poivrer. Laisser mijoter 10 min.</li>
-            <li>Creer 8 puits dans la sauce, casser un oeuf dans chaque puits.</li>
-            <li>Couvrir et cuire 5-7 min a feu doux jusqu'a ce que les blancs soient pris (jaunes encore coulants).</li>
-            <li>Parsemer de persil. Servir avec du pain complet grille.</li>
-        </ol>
-        <h3>Notes</h3>
-        <ul>
-            <li>La sauce se conserve 3 jours. Pour recuisiner : rechauffer la sauce et casser de nouveaux oeufs dedans.</li>
-            <li><strong>Jad</strong> : 3 oeufs + sauce genereuse + 2 tranches de pain. <strong>Accompagnant·e</strong> : 2 oeufs + sauce + 1 tranche.</li>
-        </ul>
-    </div>
-</div>
-
-<div class="modal-overlay" id="modal-tacos">
-    <div class="modal">
-        <button class="modal-close" onclick="closeRecipe('tacos')">&#10005;</button>
-        <h2>Tacos de tempeh & haricots noirs</h2>
-        <div class="meta">Pour 4 portions · 30 min · Budget : ~7 EUR</div>
-        <div class="macros">
-            <span class="macro-tag">530 kcal/portion</span>
-            <span class="macro-tag">34g proteines</span>
-            <span class="macro-tag">50g glucides</span>
-            <span class="macro-tag">18g lipides</span>
-        </div>
-        <h3>Ingredients</h3>
-        <ul>
-            <li>400g tempeh, emiette</li>
-            <li>1 boite de haricots noirs (240g egouttes)</li>
-            <li>8-12 tortillas de ble ou mais</li>
-            <li>2 avocats murs</li>
-            <li>200g tomates cerises, coupees en deux</li>
-            <li>1/2 chou rouge, emince fin</li>
-            <li>1 oignon, emince</li>
-            <li>Jus de 2 citrons verts</li>
-            <li>Coriandre fraiche</li>
-            <li><strong>Epices :</strong> 2 c.a.c. cumin, 1 c.a.c. paprika fume, 1 c.a.c. poudre de chili, 1/2 c.a.c. origan</li>
-            <li>2 c.a.s. sauce soja</li>
-            <li>1 c.a.s. huile de colza</li>
-        </ul>
-        <h3>Preparation</h3>
-        <ol>
-            <li>Emietter le tempeh. Le faire revenir dans l'huile avec l'oignon 5 min.</li>
-            <li>Ajouter les epices et la sauce soja, cuire 2 min. Ajouter les haricots noirs egouttes, cuire 3 min.</li>
-            <li>Preparer le guacamole : ecraser les avocats + jus de citron vert + sel.</li>
-            <li>Emincer le chou rouge, l'assaisonner avec un filet de citron vert.</li>
-            <li>Rechauffer les tortillas 30 sec a la poele seche.</li>
-            <li>Assembler : tortilla + garniture tempeh-haricots + guacamole + chou rouge + tomates + coriandre.</li>
-        </ol>
-        <h3>Notes</h3>
-        <ul>
-            <li>La garniture tempeh-haricots se conserve 3 jours. Preparer le guacamole frais au moment de servir.</li>
-            <li><strong>Jad</strong> : 3-4 tacos genereux. <strong>Accompagnant·e</strong> : 2-3 tacos.</li>
-        </ul>
-    </div>
-</div>
-
-<div class="modal-overlay" id="modal-risotto">
-    <div class="modal">
-        <button class="modal-close" onclick="closeRecipe('risotto')">&#10005;</button>
-        <h2>Risotto crevettes & asperges au lait de coco</h2>
-        <div class="meta">Pour 4 portions · 35 min · Budget : ~8 EUR</div>
-        <div class="macros">
-            <span class="macro-tag">550 kcal/portion</span>
-            <span class="macro-tag">32g proteines</span>
-            <span class="macro-tag">58g glucides</span>
-            <span class="macro-tag">16g lipides</span>
-        </div>
-        <h3>Ingredients</h3>
-        <ul>
-            <li>400g crevettes decortiquees (fraiches ou surgelees)</li>
-            <li>300g riz arborio (ou riz rond)</li>
-            <li>1 botte d'asperges vertes (~300g), coupees en troncons de 3 cm</li>
-            <li>200ml lait de coco</li>
-            <li>800ml bouillon de legumes chaud</li>
-            <li>1 oignon, emince fin</li>
-            <li>2 gousses d'ail, hachees</li>
-            <li>100ml vin blanc sec (ou jus de citron + bouillon)</li>
-            <li>2 c.a.s. levure nutritionnelle</li>
-            <li>2 c.a.s. huile d'olive</li>
-            <li>Zeste de 1 citron</li>
-            <li>Sel, poivre</li>
-        </ul>
-        <h3>Preparation</h3>
-        <ol>
-            <li>Faire revenir l'oignon dans l'huile d'olive 3 min. Ajouter l'ail, cuire 1 min.</li>
-            <li>Ajouter le riz arborio, nacrer 2 min en remuant.</li>
-            <li>Deglacer au vin blanc. Ajouter le bouillon louche par louche en remuant regulierement (~18 min).</li>
-            <li>A mi-cuisson, ajouter les asperges.</li>
-            <li>En parallele, saisir les crevettes dans une poele chaude 2 min de chaque cote. Saler, poivrer.</li>
-            <li>En fin de cuisson du riz, incorporer le lait de coco et la levure nutritionnelle. Remuer.</li>
-            <li>Dresser le risotto, disposer les crevettes par-dessus, zeste de citron.</li>
-        </ol>
-        <h3>Notes</h3>
-        <ul>
-            <li>Le risotto se conserve 3 jours. Rechauffer a la poele avec un peu de bouillon pour redonner de l'onctuosite.</li>
-            <li>La levure nutritionnelle apporte un gout umami/fromager sans produit laitier.</li>
-            <li><strong>Jad</strong> : portion XL (~400g risotto + crevettes genereuses). <strong>Accompagnant·e</strong> : ~280g.</li>
-        </ul>
-    </div>
-</div>
-
-<div class="footer">
-    Mis a jour le 3 mai 2026 · Menu adapte au programme sportif de Jad
-</div>
+<div id="modals"></div>
+<div class="footer" id="footer"></div>
 
 <script>
-    function openRecipe(id) {
-        document.getElementById('modal-' + id).classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-    function closeRecipe(id) {
-        document.getElementById('modal-' + id).classList.remove('active');
-        document.body.style.overflow = '';
-    }
-    document.querySelectorAll('.modal-overlay').forEach(overlay => {
-        overlay.addEventListener('click', function(e) {
-            if (e.target === this) {
-                this.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-    });
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            document.querySelectorAll('.modal-overlay.active').forEach(m => {
-                m.classList.remove('active');
-            });
-            document.body.style.overflow = '';
-        }
-    });
-</script>
+fetch('menu.json')
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    document.title = 'Menu de la semaine \u2014 ' + data.semaine.label;
+    document.getElementById('h-week').textContent = data.semaine.label;
+    document.getElementById('h-regime').textContent = data.info.regime;
+    document.getElementById('info-box').innerHTML =
+      '<strong>' + data.info.nbPlats + ' plats</strong> ' + data.info.description + ' ' + data.info.portions;
 
+    var planEl = document.getElementById('planning');
+    data.planning.forEach(function(day) {
+      var dej = data.recettes[day.dejeuner.recette];
+      var din = data.recettes[day.diner.recette];
+      var row = document.createElement('div');
+      row.className = 'day-row';
+      row.innerHTML =
+        '<div class="day-label">' + day.jour + '<br>' + day.date + '</div>' +
+        '<div class="meal-cell" data-recipe="' + day.dejeuner.recette + '">' +
+          '<div class="label">D\u00e9jeuner</div>' +
+          '<div class="name">' + dej.nom + '</div>' +
+          '<div class="tag">' + day.dejeuner.tag + '</div>' +
+        '</div>' +
+        '<div class="meal-cell" data-recipe="' + day.diner.recette + '">' +
+          '<div class="label">D\u00eener</div>' +
+          '<div class="name">' + din.nom + '</div>' +
+          '<div class="tag">' + day.diner.tag + '</div>' +
+        '</div>';
+      planEl.appendChild(row);
+    });
+
+    var baseEl = document.getElementById('base-list');
+    data.baseQuotidienne.forEach(function(b) {
+      var li = document.createElement('li');
+      li.innerHTML = '<strong>' + b.label + ' :</strong> ' + b.detail;
+      baseEl.appendChild(li);
+    });
+
+    var modalsEl = document.getElementById('modals');
+    Object.keys(data.recettes).forEach(function(id) {
+      var r = data.recettes[id];
+      var macrosHtml =
+        '<span class="macro-tag">' + r.macros.kcal + ' kcal/portion</span>' +
+        '<span class="macro-tag">' + r.macros.proteines + 'g prot\u00e9ines</span>' +
+        '<span class="macro-tag">' + r.macros.glucides + 'g glucides</span>' +
+        '<span class="macro-tag">' + r.macros.lipides + 'g lipides</span>';
+      var ingHtml = r.ingredients.map(function(i) { return '<li>' + i + '</li>'; }).join('');
+      var prepHtml = r.preparation.map(function(p) { return '<li>' + p + '</li>'; }).join('');
+      var notesHtml = r.notes.map(function(n) { return '<li>' + n + '</li>'; }).join('');
+      var overlay = document.createElement('div');
+      overlay.className = 'modal-overlay';
+      overlay.id = 'modal-' + id;
+      overlay.innerHTML =
+        '<div class="modal">' +
+          '<button class="modal-close" data-close="' + id + '">\u2715</button>' +
+          '<h2>' + r.nom + '</h2>' +
+          '<div class="meta">Pour ' + r.portions + ' portions \u00b7 ' + r.temps + ' \u00b7 Budget : ' + r.budget + '</div>' +
+          '<div class="macros">' + macrosHtml + '</div>' +
+          '<h3>Ingr\u00e9dients</h3><ul>' + ingHtml + '</ul>' +
+          '<h3>Pr\u00e9paration</h3><ol>' + prepHtml + '</ol>' +
+          '<h3>Notes</h3><ul>' + notesHtml + '</ul>' +
+        '</div>';
+      modalsEl.appendChild(overlay);
+    });
+
+    document.getElementById('footer').textContent =
+      'Mis \u00e0 jour le ' + data.footer.dateMAJ + ' \u00b7 ' + data.footer.note;
+
+    // Event delegation
+    document.addEventListener('click', function(e) {
+      var cell = e.target.closest('.meal-cell');
+      if (cell && cell.dataset.recipe) {
+        openRecipe(cell.dataset.recipe);
+        return;
+      }
+      var closeBtn = e.target.closest('.modal-close');
+      if (closeBtn && closeBtn.dataset.close) {
+        closeRecipe(closeBtn.dataset.close);
+        return;
+      }
+      if (e.target.classList.contains('modal-overlay')) {
+        e.target.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+
+function openRecipe(id) {
+  document.getElementById('modal-' + id).classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeRecipe(id) {
+  document.getElementById('modal-' + id).classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.active').forEach(function(m) { m.classList.remove('active'); });
+    document.body.style.overflow = '';
+  }
+});
+</script>
 </body>
 </html>

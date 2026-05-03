@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste de courses — 4 au 10 mai 2026</title>
+    <title>Liste de courses</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background: #faf8f5;
+            background: #fafaf8;
             color: #2d2d2d;
             line-height: 1.6;
         }
@@ -20,13 +20,13 @@
         }
         .header h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.3rem; }
         .header .week { font-size: 1rem; opacity: 0.9; }
-        .header .budget { font-size: 0.95rem; margin-top: 0.5rem; font-weight: 600; }
+        .header .budget { font-size: 1.1rem; margin-top: 0.5rem; font-weight: 600; }
         nav {
             display: flex;
             justify-content: center;
             gap: 1rem;
             padding: 1rem;
-            background: #f0ede8;
+            background: #f0efe8;
             border-bottom: 1px solid #ddd;
         }
         nav a {
@@ -37,135 +37,74 @@
             font-size: 0.9rem;
             transition: all 0.2s;
         }
-        nav a.active {
-            background: #8b4513;
-            color: white;
-        }
-        nav a:not(.active) {
-            background: white;
-            color: #8b4513;
-            border: 1px solid #8b4513;
-        }
-        nav a:hover:not(.active) { background: #f5ebe0; }
-        .container { max-width: 700px; margin: 0 auto; padding: 1.5rem; }
-
-        .progress-bar {
-            background: #e8e4de;
-            border-radius: 20px;
-            height: 28px;
-            margin-bottom: 1.5rem;
-            position: relative;
-            overflow: hidden;
-        }
-        .progress-fill {
-            background: linear-gradient(90deg, #8b4513, #c4783e);
-            height: 100%;
-            border-radius: 20px;
-            transition: width 0.4s ease;
-            min-width: 0;
-        }
-        .progress-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: #2d2d2d;
-        }
-
-        .category {
-            background: white;
-            border: 1px solid #e0ddd8;
-            border-radius: 12px;
-            margin-bottom: 1rem;
-            overflow: hidden;
-        }
+        nav a.active { background: #8b4513; color: white; }
+        nav a:not(.active) { background: white; color: #8b4513; border: 1px solid #8b4513; }
+        nav a:hover:not(.active) { background: #fdf0e6; }
+        .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+        .category { margin-bottom: 1.5rem; }
         .category-header {
-            background: #f5ebe0;
-            padding: 0.8rem 1.2rem;
-            font-weight: 700;
-            font-size: 1rem;
-            color: #8b4513;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 0.6rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #c4783e;
         }
-        .category-header .budget-cat {
-            font-size: 0.8rem;
-            font-weight: 600;
-            background: #8b4513;
-            color: white;
-            padding: 0.2rem 0.6rem;
-            border-radius: 10px;
-        }
+        .category-icon { font-size: 1.3rem; width: 32px; text-align: center; }
+        .category-title { font-size: 1.1rem; font-weight: 700; color: #8b4513; }
+        .category-cost { margin-left: auto; font-size: 0.85rem; color: #888; font-weight: 600; }
+        .items { display: grid; gap: 0.3rem; }
         .item {
             display: flex;
             align-items: center;
-            padding: 0.6rem 1.2rem;
-            border-bottom: 1px solid #f5f3f0;
-            gap: 0.8rem;
+            gap: 0.7rem;
+            padding: 0.5rem 0.8rem;
+            background: white;
+            border: 1px solid #e8e7e0;
+            border-radius: 8px;
+            transition: all 0.15s;
             cursor: pointer;
-            transition: background 0.15s;
         }
-        .item:hover { background: #faf8f5; }
-        .item:last-child { border-bottom: none; }
-        .item.checked .item-name,
-        .item.checked .item-qty,
-        .item.checked .item-usage {
-            text-decoration: line-through;
-            opacity: 0.5;
-        }
-        .item input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
-            accent-color: #8b4513;
-            cursor: pointer;
+        .item:hover { border-color: #c4783e; }
+        .item.checked { background: #f8f8f5; opacity: 0.5; }
+        .item.checked .item-name { text-decoration: line-through; }
+        .checkbox {
+            width: 22px; height: 22px;
+            border: 2px solid #c4783e;
+            border-radius: 5px;
             flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s;
         }
-        .item-name {
-            font-weight: 600;
-            font-size: 0.9rem;
-            flex: 1;
-        }
-        .item-qty {
-            font-size: 0.85rem;
-            color: #666;
-            min-width: 80px;
-            text-align: right;
-        }
-        .item-usage {
-            font-size: 0.75rem;
-            color: #999;
-            min-width: 100px;
-            text-align: right;
-        }
-
-        .budget-summary {
+        .item.checked .checkbox { background: #c4783e; border-color: #c4783e; }
+        .item.checked .checkbox::after { content: "\2713"; color: white; font-size: 0.85rem; font-weight: bold; }
+        .item-name { flex: 1; font-size: 0.9rem; }
+        .item-qty { font-size: 0.85rem; color: #888; font-weight: 600; white-space: nowrap; }
+        .item-use { font-size: 0.75rem; color: #aaa; min-width: 80px; text-align: right; }
+        .summary {
             background: white;
             border: 2px solid #c4783e;
             border-radius: 12px;
             padding: 1.2rem 1.5rem;
-            text-align: center;
-            margin-top: 1.5rem;
+            margin-top: 1rem;
         }
-        .budget-summary h3 { color: #8b4513; margin-bottom: 0.5rem; }
-        .budget-total {
-            font-size: 2rem;
-            font-weight: 800;
-            color: #8b4513;
+        .summary h3 { color: #8b4513; margin-bottom: 0.5rem; }
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.3rem 0;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #f0efe8;
         }
-        .budget-detail { font-size: 0.85rem; color: #888; margin-top: 0.3rem; }
-
-        .footer {
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.8rem;
-            color: #aaa;
-        }
-
+        .summary-row:last-child { border: none; font-weight: 700; font-size: 1rem; color: #8b4513; }
+        .progress-bar { margin-top: 1rem; background: #f0efe8; border-radius: 10px; height: 8px; overflow: hidden; }
+        .progress-fill { height: 100%; background: #c4783e; border-radius: 10px; transition: width 0.3s; width: 0%; }
+        .progress-text { text-align: center; font-size: 0.8rem; color: #888; margin-top: 0.3rem; }
+        .footer { text-align: center; padding: 2rem; font-size: 0.8rem; color: #aaa; }
         @media (max-width: 600px) {
-            .item-usage { display: none; }
+            .item-use { display: none; }
             .header h1 { font-size: 1.4rem; }
         }
     </style>
@@ -174,8 +113,8 @@
 
 <div class="header">
     <h1>Liste de courses</h1>
-    <div class="week">4 — 10 mai 2026</div>
-    <div class="budget">Budget estime : ~105 EUR</div>
+    <div class="week" id="h-week"></div>
+    <div class="budget" id="h-budget"></div>
 </div>
 
 <nav>
@@ -184,269 +123,98 @@
 </nav>
 
 <div class="container">
-
-    <div class="progress-bar">
-        <div class="progress-fill" id="progressFill" style="width: 0%"></div>
-        <div class="progress-text" id="progressText">0 / 0 articles</div>
-    </div>
-
-    <!-- PROTEINES -->
-    <div class="category">
-        <div class="category-header">
-            Proteines
-            <span class="budget-cat">~30 EUR</span>
-        </div>
-        <label class="item" data-key="saumon">
-            <input type="checkbox"><span class="item-name">Paves de saumon</span><span class="item-qty">1 kg</span><span class="item-usage">Saumon teriyaki x2</span>
-        </label>
-        <label class="item" data-key="crevettes">
-            <input type="checkbox"><span class="item-name">Crevettes decortiquees</span><span class="item-qty">800g</span><span class="item-usage">Risotto x2</span>
-        </label>
-        <label class="item" data-key="tempeh">
-            <input type="checkbox"><span class="item-name">Tempeh</span><span class="item-qty">800g</span><span class="item-usage">Tacos x2</span>
-        </label>
-        <label class="item" data-key="oeufs">
-            <input type="checkbox"><span class="item-name">Oeufs</span><span class="item-qty">36 (3 boites)</span><span class="item-usage">Petit-dej + shakshuka</span>
-        </label>
-    </div>
-
-    <!-- LEGUMINEUSES & FECULENTS -->
-    <div class="category">
-        <div class="category-header">
-            Legumineuses & feculents
-            <span class="budget-cat">~15 EUR</span>
-        </div>
-        <label class="item" data-key="haricots-blancs">
-            <input type="checkbox"><span class="item-name">Haricots blancs (conserve)</span><span class="item-qty">2 boites</span><span class="item-usage">Shakshuka</span>
-        </label>
-        <label class="item" data-key="haricots-noirs">
-            <input type="checkbox"><span class="item-name">Haricots noirs (conserve)</span><span class="item-qty">2 boites</span><span class="item-usage">Tacos</span>
-        </label>
-        <label class="item" data-key="edamames">
-            <input type="checkbox"><span class="item-name">Edamames decortiques (surgeles)</span><span class="item-qty">400g</span><span class="item-usage">Saumon teriyaki</span>
-        </label>
-        <label class="item" data-key="pois-chiches">
-            <input type="checkbox"><span class="item-name">Pois chiches (conserve)</span><span class="item-qty">2 boites</span><span class="item-usage">Houmous</span>
-        </label>
-        <label class="item" data-key="riz-basmati">
-            <input type="checkbox"><span class="item-name">Riz basmati</span><span class="item-qty">1 kg</span><span class="item-usage">Saumon teriyaki</span>
-        </label>
-        <label class="item" data-key="riz-arborio">
-            <input type="checkbox"><span class="item-name">Riz arborio</span><span class="item-qty">600g</span><span class="item-usage">Risotto</span>
-        </label>
-        <label class="item" data-key="tortillas">
-            <input type="checkbox"><span class="item-name">Tortillas ble/mais</span><span class="item-qty">2 paquets (16)</span><span class="item-usage">Tacos</span>
-        </label>
-        <label class="item" data-key="flocons-avoine">
-            <input type="checkbox"><span class="item-name">Flocons d'avoine</span><span class="item-qty">1 kg</span><span class="item-usage">Petit-dej quotidien</span>
-        </label>
-        <label class="item" data-key="pain-complet">
-            <input type="checkbox"><span class="item-name">Pain complet</span><span class="item-qty">2 paquets</span><span class="item-usage">Shakshuka + collations</span>
-        </label>
-        <label class="item" data-key="galettes-riz">
-            <input type="checkbox"><span class="item-name">Galettes de riz</span><span class="item-qty">1 paquet</span><span class="item-usage">Collation</span>
-        </label>
-    </div>
-
-    <!-- FRUITS & LEGUMES -->
-    <div class="category">
-        <div class="category-header">
-            Fruits & legumes
-            <span class="budget-cat">~25 EUR</span>
-        </div>
-        <label class="item" data-key="bananes">
-            <input type="checkbox"><span class="item-name">Bananes</span><span class="item-qty">14</span><span class="item-usage">Petit-dej + collations</span>
-        </label>
-        <label class="item" data-key="avocats">
-            <input type="checkbox"><span class="item-name">Avocats</span><span class="item-qty">4</span><span class="item-usage">Tacos (guacamole)</span>
-        </label>
-        <label class="item" data-key="asperges">
-            <input type="checkbox"><span class="item-name">Asperges vertes</span><span class="item-qty">2 bottes (~600g)</span><span class="item-usage">Risotto x2</span>
-        </label>
-        <label class="item" data-key="brocoli">
-            <input type="checkbox"><span class="item-name">Brocoli</span><span class="item-qty">400g</span><span class="item-usage">Saumon teriyaki</span>
-        </label>
-        <label class="item" data-key="tomates-concassees">
-            <input type="checkbox"><span class="item-name">Tomates concassees (conserve)</span><span class="item-qty">4 boites</span><span class="item-usage">Shakshuka x2</span>
-        </label>
-        <label class="item" data-key="tomates-cerises">
-            <input type="checkbox"><span class="item-name">Tomates cerises</span><span class="item-qty">400g</span><span class="item-usage">Tacos</span>
-        </label>
-        <label class="item" data-key="poivrons-rouges">
-            <input type="checkbox"><span class="item-name">Poivrons rouges</span><span class="item-qty">4</span><span class="item-usage">Shakshuka x2</span>
-        </label>
-        <label class="item" data-key="carottes">
-            <input type="checkbox"><span class="item-name">Carottes</span><span class="item-qty">4</span><span class="item-usage">Saumon teriyaki</span>
-        </label>
-        <label class="item" data-key="chou-rouge">
-            <input type="checkbox"><span class="item-name">Chou rouge</span><span class="item-qty">1 petit</span><span class="item-usage">Tacos</span>
-        </label>
-        <label class="item" data-key="oignons">
-            <input type="checkbox"><span class="item-name">Oignons</span><span class="item-qty">6</span><span class="item-usage">Tous les plats</span>
-        </label>
-        <label class="item" data-key="oignons-verts">
-            <input type="checkbox"><span class="item-name">Oignons verts</span><span class="item-qty">1 botte</span><span class="item-usage">Saumon teriyaki</span>
-        </label>
-        <label class="item" data-key="ail">
-            <input type="checkbox"><span class="item-name">Ail</span><span class="item-qty">1 tete</span><span class="item-usage">Tous les plats</span>
-        </label>
-        <label class="item" data-key="citrons-verts">
-            <input type="checkbox"><span class="item-name">Citrons verts</span><span class="item-qty">5</span><span class="item-usage">Tacos + risotto</span>
-        </label>
-        <label class="item" data-key="gingembre">
-            <input type="checkbox"><span class="item-name">Gingembre frais</span><span class="item-qty">1 morceau</span><span class="item-usage">Saumon teriyaki</span>
-        </label>
-        <label class="item" data-key="persil">
-            <input type="checkbox"><span class="item-name">Persil frais</span><span class="item-qty">1 botte</span><span class="item-usage">Shakshuka</span>
-        </label>
-        <label class="item" data-key="coriandre">
-            <input type="checkbox"><span class="item-name">Coriandre fraiche</span><span class="item-qty">1 botte</span><span class="item-usage">Tacos</span>
-        </label>
-        <label class="item" data-key="fruits-collation">
-            <input type="checkbox"><span class="item-name">Fruits de saison (pommes, kiwis...)</span><span class="item-qty">7</span><span class="item-usage">Collation Jad</span>
-        </label>
-    </div>
-
-    <!-- EPICERIE & CONDIMENTS -->
-    <div class="category">
-        <div class="category-header">
-            Epicerie & condiments
-            <span class="budget-cat">~35 EUR</span>
-        </div>
-        <label class="item" data-key="lait-avoine">
-            <input type="checkbox"><span class="item-name">Lait d'avoine</span><span class="item-qty">4 L</span><span class="item-usage">Petit-dej quotidien</span>
-        </label>
-        <label class="item" data-key="beurre-cacahuete">
-            <input type="checkbox"><span class="item-name">Beurre de cacahuete</span><span class="item-qty">1 pot (500g)</span><span class="item-usage">Petit-dej + collations</span>
-        </label>
-        <label class="item" data-key="amandes">
-            <input type="checkbox"><span class="item-name">Amandes</span><span class="item-qty">250g</span><span class="item-usage">Collation Jad</span>
-        </label>
-        <label class="item" data-key="lait-coco">
-            <input type="checkbox"><span class="item-name">Lait de coco</span><span class="item-qty">2 boites (400ml)</span><span class="item-usage">Risotto</span>
-        </label>
-        <label class="item" data-key="levure-nutri">
-            <input type="checkbox"><span class="item-name">Levure nutritionnelle</span><span class="item-qty">1 sachet</span><span class="item-usage">Risotto</span>
-        </label>
-        <label class="item" data-key="tahini">
-            <input type="checkbox"><span class="item-name">Tahini</span><span class="item-qty">1 pot</span><span class="item-usage">Houmous</span>
-        </label>
-        <label class="item" data-key="vin-blanc">
-            <input type="checkbox"><span class="item-name">Vin blanc sec (cuisine)</span><span class="item-qty">1 petite bouteille</span><span class="item-usage">Risotto</span>
-        </label>
-        <label class="item" data-key="bouillon-legumes">
-            <input type="checkbox"><span class="item-name">Bouillon de legumes</span><span class="item-qty">1 boite cubes</span><span class="item-usage">Risotto</span>
-        </label>
-        <label class="item" data-key="sirop-erable">
-            <input type="checkbox"><span class="item-name">Sirop d'erable</span><span class="item-qty">1 flacon</span><span class="item-usage">Sauce teriyaki</span>
-        </label>
-        <label class="item" data-key="graines-sesame">
-            <input type="checkbox"><span class="item-name">Graines de sesame</span><span class="item-qty">1 sachet</span><span class="item-usage">Saumon teriyaki</span>
-        </label>
-        <label class="item" data-key="maizena">
-            <input type="checkbox"><span class="item-name">Maizena</span><span class="item-qty">1 sachet</span><span class="item-usage">Sauce teriyaki</span>
-        </label>
-    </div>
-
-    <!-- VERIFIER STOCK -->
-    <div class="category">
-        <div class="category-header">
-            Verifier stock (ne pas acheter si deja en stock)
-            <span class="budget-cat">~0 EUR</span>
-        </div>
-        <label class="item" data-key="sauce-soja">
-            <input type="checkbox"><span class="item-name">Sauce soja</span><span class="item-qty">-</span><span class="item-usage">Teriyaki + tacos</span>
-        </label>
-        <label class="item" data-key="vinaigre-riz">
-            <input type="checkbox"><span class="item-name">Vinaigre de riz</span><span class="item-qty">-</span><span class="item-usage">Sauce teriyaki</span>
-        </label>
-        <label class="item" data-key="huile-olive">
-            <input type="checkbox"><span class="item-name">Huile d'olive</span><span class="item-qty">-</span><span class="item-usage">Tous les plats</span>
-        </label>
-        <label class="item" data-key="huile-colza">
-            <input type="checkbox"><span class="item-name">Huile de colza</span><span class="item-qty">-</span><span class="item-usage">Tacos</span>
-        </label>
-        <label class="item" data-key="cumin">
-            <input type="checkbox"><span class="item-name">Cumin moulu</span><span class="item-qty">-</span><span class="item-usage">Shakshuka + tacos</span>
-        </label>
-        <label class="item" data-key="paprika">
-            <input type="checkbox"><span class="item-name">Paprika fume</span><span class="item-qty">-</span><span class="item-usage">Shakshuka + tacos</span>
-        </label>
-        <label class="item" data-key="piment">
-            <input type="checkbox"><span class="item-name">Piment d'Espelette / chili</span><span class="item-qty">-</span><span class="item-usage">Shakshuka + tacos</span>
-        </label>
-        <label class="item" data-key="origan">
-            <input type="checkbox"><span class="item-name">Origan</span><span class="item-qty">-</span><span class="item-usage">Tacos</span>
-        </label>
-        <label class="item" data-key="sel-poivre">
-            <input type="checkbox"><span class="item-name">Sel, poivre</span><span class="item-qty">-</span><span class="item-usage">Base</span>
-        </label>
-    </div>
-
-    <div class="budget-summary">
-        <h3>Budget total estime</h3>
-        <div class="budget-total">~105 EUR</div>
-        <div class="budget-detail">Proteines ~30 EUR · Legumineuses & feculents ~15 EUR · Fruits & legumes ~25 EUR · Epicerie ~35 EUR</div>
-        <div class="budget-detail" style="margin-top:0.5rem;">Budget restant pour non-alimentaire (cafe, menage, hygiene, chien) : ~35 EUR</div>
-    </div>
-
+    <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
+    <div class="progress-text" id="progress-text">0 / 0 articles coch\u00e9s</div>
+    <div id="categories"></div>
+    <div class="summary" id="summary"></div>
 </div>
 
-<div class="footer">
-    Mis a jour le 3 mai 2026 · Coches sauvegardees localement
-</div>
+<div class="footer" id="footer"></div>
 
 <script>
-    const STORAGE_KEY = 'courses-2026-w19';
+var storageKey = '';
 
-    function loadState() {
-        try {
-            return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
-        } catch { return {}; }
-    }
+fetch('menu.json')
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    document.title = 'Liste de courses \u2014 ' + data.semaine.label;
+    document.getElementById('h-week').textContent = 'Semaine du ' + data.semaine.label;
+    document.getElementById('h-budget').textContent = 'Budget estim\u00e9 : ' + data.courses.budget;
 
-    function saveState(state) {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-    }
+    // Storage key unique par semaine
+    storageKey = 'courses-' + data.semaine.debut;
 
-    function updateProgress() {
-        const items = document.querySelectorAll('.item');
-        const checked = document.querySelectorAll('.item.checked');
-        const total = items.length;
-        const done = checked.length;
-        const pct = total > 0 ? Math.round((done / total) * 100) : 0;
-        document.getElementById('progressFill').style.width = pct + '%';
-        document.getElementById('progressText').textContent = done + ' / ' + total + ' articles';
-    }
+    var catEl = document.getElementById('categories');
+    data.courses.categories.forEach(function(cat) {
+      var catDiv = document.createElement('div');
+      catDiv.className = 'category';
+      var headerHtml =
+        '<div class="category-header">' +
+          '<div class="category-icon">' + cat.icone + '</div>' +
+          '<div class="category-title">' + cat.nom + '</div>' +
+          '<div class="category-cost">' + cat.cout + '</div>' +
+        '</div>';
+      var itemsHtml = '<div class="items">';
+      cat.items.forEach(function(item) {
+        itemsHtml +=
+          '<div class="item" onclick="toggleItem(this)">' +
+            '<div class="checkbox"></div>' +
+            '<div class="item-name">' + item.nom + '</div>' +
+            '<div class="item-qty">' + item.qty + '</div>' +
+            '<div class="item-use">' + item.usage + '</div>' +
+          '</div>';
+      });
+      itemsHtml += '</div>';
+      catDiv.innerHTML = headerHtml + itemsHtml;
+      catEl.appendChild(catDiv);
+    });
 
-    function init() {
-        const state = loadState();
-        const items = document.querySelectorAll('.item');
-        items.forEach(item => {
-            const key = item.dataset.key;
-            const cb = item.querySelector('input[type="checkbox"]');
-            if (state[key]) {
-                cb.checked = true;
-                item.classList.add('checked');
-            }
-            cb.addEventListener('change', () => {
-                const s = loadState();
-                if (cb.checked) {
-                    item.classList.add('checked');
-                    s[key] = true;
-                } else {
-                    item.classList.remove('checked');
-                    delete s[key];
-                }
-                saveState(s);
-                updateProgress();
-            });
-        });
-        updateProgress();
-    }
+    // Summary
+    var sumEl = document.getElementById('summary');
+    var sumHtml = '<h3>Bilan budget estim\u00e9</h3>';
+    data.courses.categories.forEach(function(cat) {
+      sumHtml += '<div class="summary-row"><span>' + cat.nom + '</span><span>' + cat.cout + '</span></div>';
+    });
+    sumHtml += '<div class="summary-row"><span>Total estim\u00e9</span><span>' + data.courses.budget + '</span></div>';
+    sumEl.innerHTML = sumHtml;
 
-    init();
+    // Footer
+    document.getElementById('footer').textContent =
+      'Mis \u00e0 jour le ' + data.footer.dateMAJ + ' \u00b7 Les articles "v\u00e9rifier stock" sont des basiques \u00e0 racheter si \u00e9puis\u00e9s';
+
+    loadState();
+  });
+
+function toggleItem(el) {
+  el.classList.toggle('checked');
+  updateProgress();
+  saveState();
+}
+
+function updateProgress() {
+  var total = document.querySelectorAll('.item').length;
+  var checked = document.querySelectorAll('.item.checked').length;
+  document.getElementById('progress').style.width = (total ? (checked / total * 100) : 0) + '%';
+  document.getElementById('progress-text').textContent = checked + ' / ' + total + ' articles coch\u00e9s';
+}
+
+function saveState() {
+  var items = document.querySelectorAll('.item');
+  var state = Array.from(items).map(function(i) { return i.classList.contains('checked'); });
+  localStorage.setItem(storageKey, JSON.stringify(state));
+}
+
+function loadState() {
+  var saved = localStorage.getItem(storageKey);
+  if (saved) {
+    var state = JSON.parse(saved);
+    var items = document.querySelectorAll('.item');
+    state.forEach(function(checked, i) {
+      if (checked && items[i]) items[i].classList.add('checked');
+    });
+  }
+  updateProgress();
+}
 </script>
-
 </body>
 </html>

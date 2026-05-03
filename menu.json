@@ -1,0 +1,300 @@
+{
+  "semaine": {
+    "debut": "2026-04-27",
+    "fin": "2026-05-03",
+    "label": "27 avril — 3 mai 2026"
+  },
+  "info": {
+    "regime": "Pescétarien · Sans produits laitiers · 2 personnes",
+    "nbPlats": 4,
+    "description": "4 plats pour la semaine, chacun cuisiné une fois et servi 2 à 3 fois. Cliquez sur un plat pour voir la recette.",
+    "portions": "Portions adaptées : Jad (prise de masse ~2800 kcal) + accompagnant·e (~2000 kcal)."
+  },
+  "baseQuotidienne": [
+    {
+      "label": "Petit-déjeuner",
+      "detail": "100g flocons d'avoine + lait d'avoine + 3 œufs brouillés + 1 banane + 1 c.à.s. beurre de cacahuète (~700 kcal, 40g prot.)"
+    },
+    {
+      "label": "Collation Jad",
+      "detail": "Houmous maison (pois chiches) + galettes de riz + 30g amandes + 1 fruit (~400 kcal, 18g prot.)"
+    },
+    {
+      "label": "Collation soir Jad",
+      "detail": "Tartines + beurre de cacahuète + 1 banane (~250 kcal, 10g prot.) — si besoin d'atteindre les 2800 kcal"
+    }
+  ],
+  "recettes": {
+    "bowl": {
+      "nom": "Bowl lentilles & sardines méditerranéen",
+      "temps": "30 min",
+      "portions": 4,
+      "budget": "~5€",
+      "macros": {
+        "kcal": 520,
+        "proteines": 38,
+        "glucides": 55,
+        "lipides": 14
+      },
+      "ingredients": [
+        "400g lentilles vertes sèches",
+        "3 boîtes de sardines à l'huile d'olive (375g net égoutté)",
+        "2 tomates moyennes, coupées en dés",
+        "1 concombre, coupé en dés",
+        "1 oignon rouge, émincé fin",
+        "1 bouquet de persil frais, haché",
+        "2 c.à.s. huile d'olive",
+        "Jus de 1 citron",
+        "1 c.à.c. cumin moulu",
+        "Sel, poivre"
+      ],
+      "preparation": [
+        "Cuire les lentilles dans 3× leur volume d'eau salée, ~20 min. Égoutter et laisser tiédir.",
+        "Préparer la vinaigrette : huile d'olive + jus de citron + cumin + sel + poivre.",
+        "Mélanger les lentilles avec les tomates, concombre, oignon rouge, persil.",
+        "Émietter les sardines égouttées par-dessus.",
+        "Arroser de vinaigrette et mélanger délicatement."
+      ],
+      "notes": [
+        "Se conserve 3 jours au frigo. Sortir 15 min avant de servir.",
+        "Jad : servir ~350g de lentilles + sardines complètes. Accompagnant·e : ~200g de lentilles + moitié des sardines."
+      ]
+    },
+    "curry": {
+      "nom": "Curry de pois chiches & cabillaud au lait de coco",
+      "temps": "35 min",
+      "portions": 4,
+      "budget": "~7€",
+      "macros": {
+        "kcal": 560,
+        "proteines": 35,
+        "glucides": 52,
+        "lipides": 20
+      },
+      "ingredients": [
+        "400g filets de cabillaud surgelés",
+        "2 boîtes de pois chiches (480g égouttés)",
+        "1 boîte de lait de coco (400ml)",
+        "200g épinards frais (ou surgelés)",
+        "1 oignon, émincé",
+        "3 gousses d'ail, hachées",
+        "1 morceau de gingembre frais (3cm), râpé",
+        "2 c.à.s. pâte de curry (jaune ou rouge)",
+        "200g riz basmati (pour servir)",
+        "1 c.à.s. huile de colza",
+        "Jus de 1/2 citron vert",
+        "Coriandre fraîche (optionnel)"
+      ],
+      "preparation": [
+        "Lancer le riz selon les instructions du paquet.",
+        "Faire revenir l'oignon dans l'huile 3 min. Ajouter ail, gingembre et pâte de curry, cuire 1 min.",
+        "Ajouter le lait de coco et les pois chiches égouttés. Porter à frémissement.",
+        "Couper le cabillaud en morceaux de 3cm, l'ajouter au curry. Cuire 8-10 min à feu moyen.",
+        "Ajouter les épinards, cuire 2 min jusqu'à ce qu'ils fondent.",
+        "Jus de citron vert, sel, poivre. Servir sur le riz."
+      ],
+      "notes": [
+        "Se réchauffe très bien. Conserver riz et curry séparément.",
+        "Jad : portion généreuse de riz (~180g cru) + curry complet. Accompagnant·e : ~100g riz + curry."
+      ]
+    },
+    "padthai": {
+      "nom": "Pad thaï au tofu & œufs",
+      "temps": "25 min",
+      "portions": 4,
+      "budget": "~6€",
+      "macros": {
+        "kcal": 510,
+        "proteines": 30,
+        "glucides": 58,
+        "lipides": 16
+      },
+      "ingredients": [
+        "300g nouilles de riz (pad thaï)",
+        "400g tofu ferme, coupé en cubes",
+        "4 œufs",
+        "2 carottes, râpées",
+        "200g pousses de soja (ou germes de haricot mungo)",
+        "4 oignons verts, émincés",
+        "60g cacahuètes concassées",
+        "2 citrons verts",
+        "Sauce : 3 c.à.s. sauce soja, 2 c.à.s. beurre de cacahuète, 1 c.à.s. sirop d'érable (ou sucre), 1 c.à.s. huile de sésame, 1 c.à.s. vinaigre de riz, sriracha au goût"
+      ],
+      "preparation": [
+        "Tremper les nouilles de riz dans l'eau chaude 8 min (ou selon paquet). Égoutter.",
+        "Mélanger tous les ingrédients de la sauce dans un bol.",
+        "Faire dorer le tofu à feu vif dans une grande poêle/wok huilé, 5 min. Réserver.",
+        "Dans la même poêle, brouiller les 4 œufs. Réserver avec le tofu.",
+        "Sauter les carottes et pousses de soja 2 min.",
+        "Ajouter les nouilles, la sauce, le tofu et les œufs. Mélanger 2 min à feu vif.",
+        "Servir avec cacahuètes, oignons verts et quartiers de citron vert."
+      ],
+      "notes": [
+        "Cuisiner 2 fois dans la semaine (lun-mar + ven) pour garder la fraîcheur des nouilles.",
+        "Jad : portion XL (~400g). Accompagnant·e : portion normale (~250g)."
+      ]
+    },
+    "gratin": {
+      "nom": "Gratin de pâtes aux œufs & épinards",
+      "temps": "40 min",
+      "portions": 4,
+      "budget": "~5€",
+      "macros": {
+        "kcal": 540,
+        "proteines": 32,
+        "glucides": 60,
+        "lipides": 16
+      },
+      "ingredients": [
+        "400g pâtes (penne ou fusilli)",
+        "6 œufs",
+        "300g épinards frais (ou 200g surgelés)",
+        "1 boîte de thon au naturel (200g égouttés)",
+        "200ml lait d'avoine",
+        "2 c.à.s. levure nutritionnelle (pour le goût \"fromager\")",
+        "1 c.à.s. moutarde de Dijon",
+        "2 gousses d'ail, hachées",
+        "40g chapelure",
+        "2 c.à.s. huile d'olive",
+        "Noix de muscade, sel, poivre"
+      ],
+      "preparation": [
+        "Préchauffer le four à 200°C. Cuire les pâtes al dente, égoutter.",
+        "Faire revenir l'ail dans l'huile d'olive 1 min. Ajouter les épinards, cuire jusqu'à ce qu'ils fondent (3 min).",
+        "Battre les œufs avec le lait d'avoine, la levure nutritionnelle, la moutarde, sel, poivre, muscade.",
+        "Mélanger pâtes + épinards + thon émietté dans un plat à gratin.",
+        "Verser le mélange œufs par-dessus. Saupoudrer de chapelure.",
+        "Enfourner 20 min jusqu'à ce que le dessus soit doré."
+      ],
+      "notes": [
+        "Se conserve 3 jours au frigo, se réchauffe au four 10 min à 180°C.",
+        "La levure nutritionnelle remplace le fromage râpé : goût umami sans produit laitier.",
+        "Jad : 1/3 du plat. Accompagnant·e : 1/4 du plat."
+      ]
+    }
+  },
+  "planning": [
+    {
+      "jour": "Lundi",
+      "date": "27 avr.",
+      "dejeuner": { "recette": "bowl", "tag": "30 min" },
+      "diner": { "recette": "padthai", "tag": "25 min" }
+    },
+    {
+      "jour": "Mardi",
+      "date": "28 avr.",
+      "dejeuner": { "recette": "curry", "tag": "35 min" },
+      "diner": { "recette": "padthai", "tag": "restes" }
+    },
+    {
+      "jour": "Mercredi",
+      "date": "29 avr.",
+      "dejeuner": { "recette": "bowl", "tag": "restes" },
+      "diner": { "recette": "gratin", "tag": "40 min" }
+    },
+    {
+      "jour": "Jeudi",
+      "date": "30 avr.",
+      "dejeuner": { "recette": "curry", "tag": "restes" },
+      "diner": { "recette": "gratin", "tag": "restes" }
+    },
+    {
+      "jour": "Vendredi",
+      "date": "1 mai",
+      "dejeuner": { "recette": "bowl", "tag": "restes" },
+      "diner": { "recette": "padthai", "tag": "recuisiner" }
+    },
+    {
+      "jour": "Samedi",
+      "date": "2 mai",
+      "dejeuner": { "recette": "curry", "tag": "recuisiner" },
+      "diner": { "recette": "gratin", "tag": "restes" }
+    },
+    {
+      "jour": "Dimanche",
+      "date": "3 mai",
+      "dejeuner": { "recette": "bowl", "tag": "recuisiner" },
+      "diner": { "recette": "curry", "tag": "restes" }
+    }
+  ],
+  "courses": {
+    "budget": "~110 €",
+    "categories": [
+      {
+        "nom": "Protéines",
+        "icone": "🐟",
+        "cout": "~22 €",
+        "items": [
+          { "nom": "Œufs", "qty": "2 × 12 (24)", "usage": "Pdj + gratin + pad thaï" },
+          { "nom": "Sardines en conserve (huile d'olive)", "qty": "6 boîtes", "usage": "Bowl lentilles" },
+          { "nom": "Thon en conserve (au naturel)", "qty": "2 boîtes", "usage": "Gratin pâtes" },
+          { "nom": "Cabillaud surgelé (filets)", "qty": "400g", "usage": "Curry" },
+          { "nom": "Tofu ferme", "qty": "3 blocs (≈600g)", "usage": "Pad thaï × 2" }
+        ]
+      },
+      {
+        "nom": "Légumineuses & féculents",
+        "icone": "🌾",
+        "cout": "~10 €",
+        "items": [
+          { "nom": "Lentilles vertes sèches", "qty": "800g", "usage": "Bowl" },
+          { "nom": "Pois chiches en conserve", "qty": "4 boîtes", "usage": "Curry + houmous collation" },
+          { "nom": "Riz basmati", "qty": "1 kg", "usage": "Curry + base" },
+          { "nom": "Pâtes (penne ou fusilli)", "qty": "500g", "usage": "Gratin" },
+          { "nom": "Nouilles de riz (pad thaï)", "qty": "2 × 300g", "usage": "Pad thaï × 2" },
+          { "nom": "Flocons d'avoine", "qty": "1 kg", "usage": "Petit-déj quotidien" },
+          { "nom": "Galettes de riz", "qty": "1 paquet", "usage": "Collation" }
+        ]
+      },
+      {
+        "nom": "Fruits & légumes",
+        "icone": "🥬",
+        "cout": "~13 €",
+        "items": [
+          { "nom": "Bananes", "qty": "≈10", "usage": "Pdj + collation" },
+          { "nom": "Épinards frais", "qty": "500g", "usage": "Curry + gratin" },
+          { "nom": "Tomates", "qty": "4 moyennes", "usage": "Bowl" },
+          { "nom": "Concombre", "qty": "2", "usage": "Bowl" },
+          { "nom": "Carottes", "qty": "4", "usage": "Pad thaï" },
+          { "nom": "Pousses de soja / germes", "qty": "400g", "usage": "Pad thaï" },
+          { "nom": "Oignon rouge", "qty": "2", "usage": "Bowl" },
+          { "nom": "Oignons jaunes", "qty": "3", "usage": "Curry + gratin" },
+          { "nom": "Oignons verts", "qty": "1 botte", "usage": "Pad thaï" },
+          { "nom": "Citrons", "qty": "3", "usage": "Bowl + vinaigrette" },
+          { "nom": "Citrons verts", "qty": "4", "usage": "Curry + pad thaï" },
+          { "nom": "Ail", "qty": "1 tête", "usage": "Curry + gratin" },
+          { "nom": "Gingembre frais", "qty": "1 morceau", "usage": "Curry" },
+          { "nom": "Persil frais", "qty": "1 bouquet", "usage": "Bowl" },
+          { "nom": "Fruits de saison (pommes, oranges…)", "qty": "≈6", "usage": "Collation" }
+        ]
+      },
+      {
+        "nom": "Épicerie & condiments",
+        "icone": "🫙",
+        "cout": "~12 €",
+        "items": [
+          { "nom": "Lait de coco", "qty": "2 boîtes (400ml)", "usage": "Curry × 2" },
+          { "nom": "Lait d'avoine", "qty": "3 L", "usage": "Pdj + gratin" },
+          { "nom": "Beurre de cacahuète", "qty": "1 pot", "usage": "Pdj + pad thaï + collation" },
+          { "nom": "Cacahuètes concassées", "qty": "120g", "usage": "Pad thaï" },
+          { "nom": "Amandes / noix mélangées", "qty": "200g", "usage": "Collation" },
+          { "nom": "Huile d'olive", "qty": "vérifier stock", "usage": "Bowl + gratin + base" },
+          { "nom": "Huile de sésame", "qty": "1 petite bouteille", "usage": "Pad thaï" },
+          { "nom": "Sauce soja", "qty": "vérifier stock", "usage": "Pad thaï" },
+          { "nom": "Vinaigre de riz", "qty": "1 petite bouteille", "usage": "Pad thaï" },
+          { "nom": "Pâte de curry (jaune ou rouge)", "qty": "1 pot", "usage": "Curry" },
+          { "nom": "Levure nutritionnelle", "qty": "1 sachet", "usage": "Gratin (remplace fromage)" },
+          { "nom": "Moutarde de Dijon", "qty": "vérifier stock", "usage": "Gratin" },
+          { "nom": "Chapelure", "qty": "1 paquet", "usage": "Gratin" },
+          { "nom": "Cumin moulu", "qty": "vérifier stock", "usage": "Bowl" },
+          { "nom": "Sriracha", "qty": "vérifier stock", "usage": "Pad thaï" },
+          { "nom": "Sirop d'érable (ou sucre)", "qty": "vérifier stock", "usage": "Pad thaï" }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "dateMAJ": "3 mai 2026",
+    "note": "Menu adapté au programme sportif de Jad"
+  }
+}
