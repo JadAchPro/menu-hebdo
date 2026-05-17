@@ -1,305 +1,322 @@
 {
   "semaine": {
-    "debut": "2026-05-11",
-    "fin": "2026-05-17",
-    "label": "11 — 17 mai 2026"
+    "debut": "2026-05-18",
+    "fin": "2026-05-24",
+    "label": "18 — 24 mai 2026"
   },
   "info": {
     "regime": "Pescetarien · Sans produits laitiers · 2 personnes",
     "nbPlats": 4,
-    "description": "pour la semaine, chacun cuisine une fois et servi 2 a 3 fois. Cliquez sur un plat pour voir la recette.",
-    "portions": "Portions adaptees : Jad (prise de masse ~2800 kcal) + accompagnant·e (~2000 kcal)."
+    "description": "4 plats pour la semaine, chacun cuisine une fois et servi 2 a 3 fois. Vendredi = jour pauvre (pratique spirituelle). Cliquez sur un plat pour voir la recette.",
+    "portions": "Portions adaptees : Jad (palier intermediaire ~2400 kcal) + accompagnant·e (~2000 kcal)."
   },
   "baseQuotidienne": [
     {
-      "label": "Petit-dejeuner",
-      "detail": "40g flocons d'avoine + lait d'avoine + 3 oeufs brouilles + 2 tartines de pain complet + 1 banane + 1 c.a.s. beurre de cacahuete (~700 kcal, 40g prot.)"
+      "label": "🥤 Shaker du matin (se boit sans appetit)",
+      "detail": "50g flocons d'avoine mixes + 1 banane + 1 c.a.s. beurre de cacahuete + 250ml lait d'avoine → mixer et boire (~500 kcal, 14g prot.). Option : + 2 oeufs durs a cote si appetit (~660 kcal, 27g prot.)"
     },
     {
-      "label": "Collation Jad",
+      "label": "Collation Jad (17h)",
       "detail": "Houmous maison (pois chiches) + galettes de riz + 30g amandes + 1 fruit (~400 kcal, 18g prot.)"
     },
     {
       "label": "Collation soir Jad",
-      "detail": "Tartines + beurre de cacahuete + 1 banane (~250 kcal, 10g prot.) — si besoin d'atteindre les 2800 kcal"
+      "detail": "Tartines pain complet + beurre de cacahuete + 1 banane (~250 kcal, 10g prot.) — si besoin"
     }
   ],
   "recettes": {
-    "curry-pois-chiches": {
-      "nom": "Curry de pois chiches & patate douce",
-      "temps": "30 min",
+    "shakshuka-pois-chiches": {
+      "nom": "Shakshuka aux pois chiches & epinards",
+      "temps": "25 min",
       "portions": 4,
       "budget": "~5 €",
       "macros": {
         "kcal": 520,
-        "proteines": 30,
-        "glucides": 62,
-        "lipides": 16
+        "proteines": 32,
+        "glucides": 48,
+        "lipides": 20
       },
       "ingredients": [
+        "12 oeufs (3 par portion)",
         "2 boites de pois chiches (480g egouttes)",
-        "2 patates douces moyennes (~500g), coupees en cubes de 2 cm",
-        "400ml lait de coco",
+        "800g tomates concassees (2 boites)",
         "300g epinards frais (ou 200g surgeles)",
-        "1 oignon, emince",
-        "3 gousses d'ail, hachees",
-        "1 morceau de gingembre (3 cm), rape",
-        "2 c.a.s. pate de curry rouge (verifier sans laitier)",
-        "1 c.a.c. curcuma moulu",
-        "1 c.a.c. cumin moulu",
-        "Jus de 1 citron vert",
-        "2 c.a.s. huile de colza",
-        "300g riz basmati (accompagnement)",
-        "Coriandre fraiche"
+        "2 oignons, eminces",
+        "4 gousses d'ail, hachees",
+        "2 c.a.c. cumin moulu",
+        "2 c.a.c. paprika",
+        "1 c.a.c. piment d'Espelette (ou harissa)",
+        "3 c.a.s. huile d'olive",
+        "Persil frais ou coriandre",
+        "Pain complet (accompagnement, ~100g/pers.)"
       ],
       "preparation": [
-        "Cuire le riz basmati selon les instructions.",
-        "Faire revenir l'oignon dans l'huile 3 min. Ajouter ail, gingembre, pate de curry, curcuma et cumin. Cuire 1 min.",
-        "Ajouter les cubes de patate douce, le lait de coco et 200ml d'eau. Porter a ebullition, reduire et mijoter 12 min.",
-        "Ajouter les pois chiches egouttes, poursuivre la cuisson 5 min jusqu'a ce que les patates soient tendres.",
-        "Incorporer les epinards, cuire 2 min jusqu'a ce qu'ils soient tombes.",
-        "Presser le citron vert, ajuster l'assaisonnement. Servir sur le riz, parsemer de coriandre."
+        "Faire revenir les oignons dans l'huile d'olive 3 min. Ajouter l'ail, le cumin, le paprika et le piment. Cuire 1 min.",
+        "Ajouter les tomates concassees, saler, poivrer. Laisser mijoter 8 min a feu moyen.",
+        "Incorporer les pois chiches egouttes et les epinards. Cuire 3 min.",
+        "Faire des puits dans la sauce. Casser les oeufs dedans (3/pers. Jad, 2/pers. accompagnant·e). Couvrir et cuire 5-7 min.",
+        "Parsemer de persil/coriandre. Servir avec pain complet."
       ],
       "notes": [
-        "Se conserve 3 jours au frigo. Se rechauff tres bien au micro-ondes ou a la casserole.",
-        "Jad : 200g riz cru + portion genereuse de curry (~450g). Accompagnant·e : 120g riz + ~300g curry."
+        "La sauce se conserve 3 jours au frigo. Pour les restes : rechauffer la sauce, puis casser des oeufs frais dedans (3 min).",
+        "Jad : 3 oeufs + ~400g sauce + 150g pain. Accompagnant·e : 2 oeufs + ~250g sauce + 80g pain.",
+        "Riche en fer (epinards + pois chiches) et proteines completes (oeufs)."
       ]
     },
-    "poke-thon": {
-      "nom": "Poke bowl thon, avocat & edamames",
+    "saumon-teriyaki": {
+      "nom": "Bowl saumon teriyaki, riz & edamames",
       "temps": "25 min",
       "portions": 4,
       "budget": "~10 €",
       "macros": {
-        "kcal": 550,
-        "proteines": 36,
-        "glucides": 50,
-        "lipides": 20
+        "kcal": 560,
+        "proteines": 38,
+        "glucides": 55,
+        "lipides": 18
       },
       "ingredients": [
-        "500g thon frais qualite sashimi (ou 4 boites de thon au naturel pour version economique)",
+        "600g filet de saumon (frais ou surgele), en 4 paves",
         "200g edamames decortiques (surgeles)",
+        "300g riz basmati",
         "2 avocats murs",
-        "250g riz a sushi (ou riz rond)",
-        "1 concombre, coupe en rondelles fines",
-        "2 carottes, rapees ou en julienne",
-        "1 mangue (ou 200g mangue surgelee), en cubes",
+        "200g concombre, en rondelles",
+        "2 carottes, rapees",
         "2 oignons verts, eminces",
         "2 c.a.s. graines de sesame",
-        "<strong>Sauce poke :</strong> 4 c.a.s. sauce soja, 2 c.a.s. huile de sesame, 1 c.a.s. vinaigre de riz, 1 c.a.c. sriracha, jus de 1 citron vert",
-        "<strong>Riz :</strong> 2 c.a.s. vinaigre de riz, 1 c.a.s. sucre, 1 pincee de sel"
+        "<strong>Sauce teriyaki maison :</strong> 4 c.a.s. sauce soja, 2 c.a.s. sirop d'erable, 1 c.a.s. vinaigre de riz, 1 c.a.c. gingembre rape, 1 gousse d'ail hachee, 1 c.a.c. fecule de mais + 2 c.a.s. eau",
+        "1 c.a.s. huile de colza"
       ],
       "preparation": [
-        "Cuire le riz a sushi. Une fois cuit, assaisonner avec le melange vinaigre de riz + sucre + sel. Laisser refroidir.",
-        "Cuire les edamames dans l'eau bouillante 3 min, egoutter.",
-        "Melanger tous les ingredients de la sauce poke dans un bol.",
-        "Si thon frais : couper en cubes de 2 cm et mariner 10 min dans la moitie de la sauce. Si thon en boite : egoutter et emietter.",
-        "Dresser les bowls : riz vinaigre, thon marine, avocat en tranches, edamames, concombre, carottes, mangue.",
-        "Arroser du reste de sauce, parsemer d'oignons verts et graines de sesame."
+        "Cuire le riz basmati. Cuire les edamames 3 min dans l'eau bouillante.",
+        "Melanger sauce soja, sirop d'erable, vinaigre de riz, gingembre et ail dans un bol.",
+        "Saisir les paves de saumon dans l'huile a feu vif, 3 min par face. Verser la sauce teriyaki, reduire 2 min. Ajouter la fecule delayee pour epaissir.",
+        "Dresser les bowls : riz, saumon glace, edamames, avocat en tranches, concombre, carottes rapees.",
+        "Parsemer d'oignons verts et graines de sesame."
       ],
       "notes": [
-        "Preparer les garnitures a l'avance, assembler au moment de servir. Le riz et les legumes se conservent 3 jours separes.",
-        "Si thon frais : consommer le jour meme. Version boite : se conserve 3 jours.",
-        "Jad : 180g riz cru + thon genereux + tous les toppings. Accompagnant·e : 110g riz + portion standard."
+        "Le saumon se conserve 2 jours au frigo. Preparer les garnitures a l'avance, assembler au moment de servir.",
+        "Jad : 180g riz cru + pave genereux (175g) + tous les toppings. Accompagnant·e : 110g riz + 125g saumon.",
+        "Alternative economique : remplacer saumon frais par truite ou thon en boite."
       ]
     },
-    "pad-thai-tofu": {
-      "nom": "Pad thai au tofu croustillant",
+    "dhal-crevettes": {
+      "nom": "Dhal de lentilles corail aux crevettes",
       "temps": "30 min",
       "portions": 4,
-      "budget": "~7 €",
+      "budget": "~8 €",
       "macros": {
         "kcal": 530,
-        "proteines": 32,
-        "glucides": 56,
-        "lipides": 18
+        "proteines": 36,
+        "glucides": 58,
+        "lipides": 14
       },
       "ingredients": [
-        "400g tofu ferme, coupe en cubes de 2 cm",
-        "300g nouilles de riz plates (pad thai)",
-        "200g pousses de soja",
-        "2 oeufs",
-        "2 carottes, rapees",
-        "1 poivron rouge, emince fin",
-        "4 oignons verts, eminces",
-        "100g cacahuetes concassees",
-        "1 citron vert, coupe en quartiers",
-        "<strong>Sauce pad thai :</strong> 3 c.a.s. sauce soja, 2 c.a.s. sirop d'erable, 2 c.a.s. vinaigre de riz, 1 c.a.s. pate de tamarin (ou jus de citron vert), 1 c.a.c. sriracha",
+        "300g lentilles corail",
+        "400g crevettes decortiquees (fraiches ou surgelees)",
+        "400ml lait de coco",
+        "400g tomates concassees",
+        "1 oignon, emince",
+        "3 gousses d'ail, hachees",
+        "1 morceau de gingembre (3 cm), rape",
+        "2 c.a.c. curry en poudre",
+        "1 c.a.c. curcuma",
+        "1 c.a.c. cumin moulu",
+        "Jus de 1 citron",
+        "Coriandre fraiche",
         "2 c.a.s. huile de colza",
-        "2 gousses d'ail, hachees"
+        "250g riz basmati (accompagnement)"
       ],
       "preparation": [
-        "Faire tremper les nouilles de riz dans l'eau chaude 8 min (ou selon emballage). Egoutter.",
-        "Melanger les ingredients de la sauce dans un bol.",
-        "Presser le tofu entre 2 torchons. Couper en cubes. Saisir dans 1 c.a.s. d'huile a feu vif 5-6 min jusqu'a dorage. Reserver.",
-        "Dans la meme poele, ajouter 1 c.a.s. d'huile, l'ail, les carottes et le poivron. Sauter 3 min.",
-        "Pousser les legumes sur un cote, casser les 2 oeufs et les brouiller rapidement.",
-        "Ajouter les nouilles egouttees et la sauce. Melanger vigoureusement 2 min. Ajouter les pousses de soja et le tofu.",
-        "Servir avec oignons verts, cacahuetes concassees et quartiers de citron vert."
+        "Rincer les lentilles corail. Les cuire dans 600ml d'eau, 10 min a feu moyen jusqu'a ce qu'elles soient fondantes.",
+        "Faire revenir l'oignon dans l'huile 3 min. Ajouter ail, gingembre, curry, curcuma et cumin. Cuire 1 min.",
+        "Ajouter les tomates concassees et le lait de coco. Laisser mijoter 5 min.",
+        "Incorporer les lentilles cuites. Melanger.",
+        "Ajouter les crevettes, cuire 3-4 min jusqu'a ce qu'elles soient roses et opaques.",
+        "Presser le citron, ajuster l'assaisonnement. Servir sur le riz avec coriandre fraiche."
       ],
       "notes": [
-        "Le pad thai est meilleur frais. Pour les restes : recuisiner les nouilles a la poele 3 min avec un filet de sauce soja.",
-        "Jad : portion XL (~450g). Accompagnant·e : ~300g.",
-        "Les nouilles de riz collent en refroidissant : ajouter un filet d'huile de sesame pour le stockage."
+        "Se conserve 3 jours au frigo (rechauffer doucement pour ne pas surcuire les crevettes).",
+        "Jad : 150g riz cru + ~450g dhal. Accompagnant·e : 100g riz + ~300g dhal.",
+        "Les lentilles corail sont riches en fer et se digerent facilement."
       ]
     },
-    "galettes-sardines": {
-      "nom": "Galettes de sardines & lentilles corail, salade tiede",
-      "temps": "35 min",
+    "riz-saute-oeufs": {
+      "nom": "Riz saute aux oeufs, edamames & legumes",
+      "temps": "20 min",
       "portions": 4,
-      "budget": "~6 €",
+      "budget": "~5 €",
       "macros": {
         "kcal": 510,
-        "proteines": 34,
-        "glucides": 46,
-        "lipides": 18
+        "proteines": 30,
+        "glucides": 58,
+        "lipides": 16
       },
       "ingredients": [
-        "3 boites de sardines a l'huile d'olive (~360g egouttees)",
-        "200g lentilles corail",
-        "1 oignon, emince fin",
-        "2 gousses d'ail, hachees",
-        "1 oeuf",
-        "60g chapelure (ou flocons d'avoine mixes)",
-        "1 c.a.c. cumin moulu",
-        "1 c.a.c. paprika",
-        "Persil frais, hache",
-        "Jus de 1 citron",
-        "<strong>Salade tiede :</strong> 300g courgettes, coupees en demi-rondelles, 200g tomates cerises, 1 boite de haricots blancs (240g egouttes), 2 c.a.s. huile d'olive, 1 c.a.s. vinaigre balsamique",
-        "2 c.a.s. huile d'olive (cuisson galettes)"
+        "400g riz basmati (cuit la veille de preference)",
+        "8 oeufs",
+        "200g edamames decortiques (surgeles)",
+        "2 carottes, coupees en petits des",
+        "200g petits pois (surgeles)",
+        "1 poivron rouge, emince",
+        "4 oignons verts, eminces",
+        "3 gousses d'ail, hachees",
+        "1 morceau de gingembre (2 cm), rape",
+        "3 c.a.s. sauce soja",
+        "1 c.a.s. huile de sesame",
+        "2 c.a.s. huile de colza",
+        "Graines de sesame"
       ],
       "preparation": [
-        "Cuire les lentilles corail dans 2 fois leur volume d'eau, 10-12 min jusqu'a ce qu'elles soient tendres et absorbent l'eau. Egoutter si necessaire.",
-        "Egoutter les sardines, les emietter dans un saladier. Ajouter les lentilles cuites, l'oignon, l'ail, l'oeuf, la chapelure, le cumin, le paprika et le persil. Bien melanger.",
-        "Former 8-10 galettes. Saisir dans l'huile d'olive 3-4 min de chaque cote jusqu'a dorage.",
-        "Pour la salade tiede : faire sauter les courgettes 5 min a la poele. Ajouter les tomates cerises coupees en 2 et les haricots blancs, cuire 3 min. Assaisonner huile d'olive + vinaigre balsamique.",
-        "Dresser : galettes + salade tiede. Arroser d'un filet de citron."
+        "Si le riz n'est pas deja cuit, le cuire et le laisser refroidir (le riz froid donne un meilleur riz saute).",
+        "Battre les oeufs. Les brouiller rapidement dans 1 c.a.s. d'huile a feu vif. Reserver en morceaux.",
+        "Dans la meme poele, ajouter 1 c.a.s. d'huile. Sauter carottes, poivron et petits pois 3 min.",
+        "Ajouter l'ail, le gingembre et les edamames. Cuire 2 min.",
+        "Ajouter le riz froid, la sauce soja et l'huile de sesame. Sauter a feu vif 3-4 min en melangeant bien.",
+        "Remettre les oeufs brouilles. Melanger. Servir avec oignons verts et graines de sesame."
       ],
       "notes": [
-        "Les galettes se conservent 3 jours au frigo. Rechauffer a la poele 2 min de chaque cote.",
-        "Jad : 3-4 galettes + salade genereuse. Accompagnant·e : 2-3 galettes + salade.",
-        "Les sardines en conserve sont riches en omega-3, calcium et vitamine D."
+        "Se conserve 3 jours au frigo. Rechauffer a la poele 3 min avec un filet de sauce soja.",
+        "Jad : portion XL (~500g, 3 oeufs). Accompagnant·e : ~350g (2 oeufs).",
+        "Astuce : cuire le double de riz un autre jour et le garder au frigo pour cette recette."
+      ]
+    },
+    "jour-pauvre": {
+      "nom": "🕊️ Jour pauvre — Repas frugaux proteines",
+      "temps": "15 min",
+      "portions": 1,
+      "budget": "~2 €",
+      "macros": {
+        "kcal": 350,
+        "proteines": 22,
+        "glucides": 50,
+        "lipides": 6
+      },
+      "ingredients": [
+        "<strong>Midi — Riz + lentilles :</strong> 150g riz + 150g lentilles cuites + 1 fruit",
+        "<strong>Soir — Riz + sardines :</strong> 150g riz + 1 boite sardines",
+        "<strong>Alternative :</strong> Riz + 2 oeufs durs (si pas de sardines)",
+        "<strong>Collation :</strong> 1 banane + 1 c.a.s. beurre de cacahuete"
+      ],
+      "preparation": [
+        "Cuire le riz nature. Rechauffer les lentilles ou ouvrir la boite de sardines.",
+        "Manger sobrement, sans fioriture.",
+        "Total journee : ~800-1000 kcal, ~60-70g proteines."
+      ],
+      "notes": [
+        "Jour de pratique spirituelle. Pas d'entrainement (repos + mobilite uniquement).",
+        "Privilegier riz + legumineuse (midi) et riz + proteine animale (soir) pour optimiser l'apport malgre la frugalite.",
+        "Pas de shaker le matin ce jour-la. Le deficit est absorbe par la moyenne hebdomadaire."
       ]
     }
   },
   "planning": [
     {
       "jour": "Lundi",
-      "date": "11 mai",
-      "dejeuner": { "recette": "curry-pois-chiches", "tag": "30 min" },
-      "diner": { "recette": "poke-thon", "tag": "25 min" }
+      "date": "18 mai",
+      "dejeuner": { "recette": "shakshuka-pois-chiches", "tag": "25 min" },
+      "diner": { "recette": "saumon-teriyaki", "tag": "25 min" }
     },
     {
       "jour": "Mardi",
-      "date": "12 mai",
-      "dejeuner": { "recette": "poke-thon", "tag": "restes" },
-      "diner": { "recette": "pad-thai-tofu", "tag": "30 min" }
+      "date": "19 mai",
+      "dejeuner": { "recette": "saumon-teriyaki", "tag": "restes" },
+      "diner": { "recette": "dhal-crevettes", "tag": "30 min" }
     },
     {
       "jour": "Mercredi",
-      "date": "13 mai",
-      "dejeuner": { "recette": "curry-pois-chiches", "tag": "restes" },
-      "diner": { "recette": "galettes-sardines", "tag": "35 min" }
+      "date": "20 mai",
+      "dejeuner": { "recette": "shakshuka-pois-chiches", "tag": "oeufs frais" },
+      "diner": { "recette": "riz-saute-oeufs", "tag": "20 min" }
     },
     {
       "jour": "Jeudi",
-      "date": "14 mai",
-      "dejeuner": { "recette": "galettes-sardines", "tag": "restes" },
-      "diner": { "recette": "pad-thai-tofu", "tag": "recuisiner" }
+      "date": "21 mai",
+      "dejeuner": { "recette": "riz-saute-oeufs", "tag": "restes" },
+      "diner": { "recette": "dhal-crevettes", "tag": "restes" }
     },
     {
       "jour": "Vendredi",
-      "date": "15 mai",
-      "dejeuner": { "recette": "curry-pois-chiches", "tag": "recuisiner" },
-      "diner": { "recette": "poke-thon", "tag": "restes" }
+      "date": "22 mai",
+      "dejeuner": { "recette": "jour-pauvre", "tag": "🕊️ riz + lentilles" },
+      "diner": { "recette": "jour-pauvre", "tag": "🕊️ riz + sardines" }
     },
     {
       "jour": "Samedi",
-      "date": "16 mai",
-      "dejeuner": { "recette": "pad-thai-tofu", "tag": "restes" },
-      "diner": { "recette": "galettes-sardines", "tag": "recuisiner" }
+      "date": "23 mai",
+      "dejeuner": { "recette": "shakshuka-pois-chiches", "tag": "oeufs frais" },
+      "diner": { "recette": "saumon-teriyaki", "tag": "restes" }
     },
     {
       "jour": "Dimanche",
-      "date": "17 mai",
-      "dejeuner": { "recette": "curry-pois-chiches", "tag": "restes" },
-      "diner": { "recette": "galettes-sardines", "tag": "restes" }
+      "date": "24 mai",
+      "dejeuner": { "recette": "dhal-crevettes", "tag": "recuisiner" },
+      "diner": { "recette": "riz-saute-oeufs", "tag": "restes" }
     }
   ],
   "courses": {
-    "budget": "~108 €",
+    "budget": "~105 €",
     "categories": [
       {
         "nom": "Proteines",
         "icone": "🐟",
         "cout": "~28 €",
         "items": [
-          { "nom": "Thon frais qualite sashimi (ou 4 boites thon naturel)", "qty": "500g (ou 4 boites)", "usage": "Poke bowl" },
-          { "nom": "Sardines a l'huile d'olive (conserve)", "qty": "6 boites", "usage": "Galettes sardines x2" },
-          { "nom": "Tofu ferme", "qty": "800g", "usage": "Pad thai x2" },
-          { "nom": "Oeufs", "qty": "30 (2,5 boites)", "usage": "Petit-dej + pad thai + galettes" }
+          { "nom": "Filet de saumon (frais ou surgele)", "qty": "600g", "usage": "Bowl teriyaki" },
+          { "nom": "Crevettes decortiquees (surgelees)", "qty": "400g", "usage": "Dhal x2" },
+          { "nom": "Sardines en conserve", "qty": "2 boites", "usage": "Jour pauvre" },
+          { "nom": "Oeufs", "qty": "36 (3 boites de 12)", "usage": "Shaker + shakshuka + riz saute" },
+          { "nom": "Edamames decortiques (surgeles)", "qty": "400g", "usage": "Bowl teriyaki + riz saute" }
         ]
       },
       {
         "nom": "Legumineuses & feculents",
         "icone": "🌾",
-        "cout": "~14 €",
+        "cout": "~16 €",
         "items": [
-          { "nom": "Pois chiches (conserve)", "qty": "4 boites", "usage": "Curry x2 + houmous" },
-          { "nom": "Lentilles corail", "qty": "400g", "usage": "Galettes sardines x2" },
-          { "nom": "Haricots blancs (conserve)", "qty": "2 boites", "usage": "Salade tiede galettes" },
-          { "nom": "Edamames decortiques (surgeles)", "qty": "400g", "usage": "Poke bowl" },
-          { "nom": "Riz basmati", "qty": "1 kg", "usage": "Curry" },
-          { "nom": "Riz a sushi / riz rond", "qty": "500g", "usage": "Poke bowl" },
-          { "nom": "Nouilles de riz plates (pad thai)", "qty": "600g", "usage": "Pad thai x2" },
-          { "nom": "Flocons d'avoine", "qty": "1 kg", "usage": "Petit-dej quotidien" },
-          { "nom": "Pain complet", "qty": "2 paquets", "usage": "Petit-dej + collations" },
+          { "nom": "Pois chiches (conserve)", "qty": "4 boites", "usage": "Shakshuka x3 + houmous" },
+          { "nom": "Lentilles corail", "qty": "500g", "usage": "Dhal x2 + jour pauvre" },
+          { "nom": "Riz basmati", "qty": "1.5 kg", "usage": "Bowl + dhal + riz saute + jour pauvre" },
+          { "nom": "Flocons d'avoine", "qty": "1 kg", "usage": "Shaker matin quotidien" },
+          { "nom": "Pain complet", "qty": "2 paquets", "usage": "Shakshuka + collations" },
           { "nom": "Galettes de riz", "qty": "1 paquet", "usage": "Collation" },
-          { "nom": "Chapelure", "qty": "1 paquet", "usage": "Galettes sardines" }
+          { "nom": "Petits pois (surgeles)", "qty": "200g", "usage": "Riz saute" }
         ]
       },
       {
         "nom": "Fruits & legumes",
         "icone": "🥬",
-        "cout": "~28 €",
+        "cout": "~25 €",
         "items": [
-          { "nom": "Bananes", "qty": "14", "usage": "Petit-dej + collations" },
-          { "nom": "Patates douces", "qty": "1 kg", "usage": "Curry x2" },
-          { "nom": "Epinards frais", "qty": "600g", "usage": "Curry x2" },
-          { "nom": "Avocats", "qty": "4", "usage": "Poke bowl" },
-          { "nom": "Concombre", "qty": "2", "usage": "Poke bowl" },
-          { "nom": "Mangue", "qty": "2 (ou 400g surgelee)", "usage": "Poke bowl" },
-          { "nom": "Carottes", "qty": "6", "usage": "Poke bowl + pad thai" },
-          { "nom": "Poivron rouge", "qty": "2", "usage": "Pad thai" },
-          { "nom": "Courgettes", "qty": "600g", "usage": "Salade tiede galettes" },
-          { "nom": "Tomates cerises", "qty": "400g", "usage": "Galettes salade tiede" },
-          { "nom": "Pousses de soja", "qty": "400g", "usage": "Pad thai x2" },
-          { "nom": "Oignons", "qty": "6", "usage": "Tous les plats" },
-          { "nom": "Oignons verts", "qty": "1 botte", "usage": "Poke bowl + pad thai" },
+          { "nom": "Bananes", "qty": "14", "usage": "Shaker matin + collations + jour pauvre" },
+          { "nom": "Epinards frais (ou surgeles)", "qty": "300g", "usage": "Shakshuka" },
+          { "nom": "Avocats", "qty": "4", "usage": "Bowl teriyaki" },
+          { "nom": "Concombre", "qty": "2", "usage": "Bowl teriyaki" },
+          { "nom": "Carottes", "qty": "6", "usage": "Bowl teriyaki + riz saute" },
+          { "nom": "Poivron rouge", "qty": "1", "usage": "Riz saute" },
+          { "nom": "Oignons", "qty": "5", "usage": "Shakshuka + dhal" },
+          { "nom": "Oignons verts", "qty": "1 botte", "usage": "Bowl teriyaki + riz saute" },
           { "nom": "Ail", "qty": "1 tete", "usage": "Tous les plats" },
-          { "nom": "Gingembre frais", "qty": "1 morceau", "usage": "Curry" },
-          { "nom": "Citrons verts", "qty": "5", "usage": "Curry + poke + pad thai" },
-          { "nom": "Citrons jaunes", "qty": "2", "usage": "Galettes sardines" },
-          { "nom": "Coriandre fraiche", "qty": "1 botte", "usage": "Curry + poke" },
-          { "nom": "Persil frais", "qty": "1 botte", "usage": "Galettes sardines" },
-          { "nom": "Fruits de saison", "qty": "7", "usage": "Collation Jad" }
+          { "nom": "Gingembre frais", "qty": "1 morceau", "usage": "Dhal + teriyaki + riz saute" },
+          { "nom": "Citrons", "qty": "2", "usage": "Dhal" },
+          { "nom": "Coriandre fraiche", "qty": "1 botte", "usage": "Shakshuka + dhal" },
+          { "nom": "Persil frais", "qty": "1 botte", "usage": "Shakshuka" },
+          { "nom": "Fruits de saison", "qty": "7", "usage": "Collation + jour pauvre" }
         ]
       },
       {
         "nom": "Epicerie & condiments",
         "icone": "🫙",
-        "cout": "~33 €",
+        "cout": "~30 €",
         "items": [
-          { "nom": "Lait d'avoine", "qty": "4 L", "usage": "Petit-dej quotidien" },
-          { "nom": "Beurre de cacahuete", "qty": "1 pot (500g)", "usage": "Petit-dej + collations" },
+          { "nom": "Lait d'avoine", "qty": "4 L", "usage": "Shaker matin quotidien" },
+          { "nom": "Beurre de cacahuete", "qty": "1 pot (500g)", "usage": "Shaker + collations + jour pauvre" },
           { "nom": "Amandes", "qty": "250g", "usage": "Collation Jad" },
-          { "nom": "Lait de coco", "qty": "2 boites (800ml)", "usage": "Curry x2" },
-          { "nom": "Pate de curry rouge", "qty": "1 pot", "usage": "Curry" },
-          { "nom": "Cacahuetes concassees", "qty": "200g", "usage": "Pad thai" },
-          { "nom": "Tahini", "qty": "1 pot", "usage": "Houmous" },
-          { "nom": "Sirop d'erable", "qty": "1 flacon", "usage": "Sauce pad thai" },
-          { "nom": "Sriracha", "qty": "1 flacon", "usage": "Poke + pad thai" },
-          { "nom": "Graines de sesame", "qty": "1 sachet", "usage": "Poke bowl" }
+          { "nom": "Lait de coco", "qty": "1 boite (400ml)", "usage": "Dhal" },
+          { "nom": "Tomates concassees (conserve)", "qty": "3 boites (400g)", "usage": "Shakshuka + dhal" },
+          { "nom": "Tahini", "qty": "verifier stock", "usage": "Houmous collation" },
+          { "nom": "Sirop d'erable", "qty": "verifier stock", "usage": "Sauce teriyaki" },
+          { "nom": "Graines de sesame", "qty": "1 sachet", "usage": "Bowl teriyaki + riz saute" },
+          { "nom": "Fecule de mais", "qty": "verifier stock", "usage": "Sauce teriyaki" }
         ]
       },
       {
@@ -307,23 +324,23 @@
         "icone": "🔍",
         "cout": "~0 €",
         "items": [
-          { "nom": "Sauce soja", "qty": "-", "usage": "Poke + pad thai" },
-          { "nom": "Vinaigre de riz", "qty": "-", "usage": "Poke + pad thai" },
-          { "nom": "Vinaigre balsamique", "qty": "-", "usage": "Galettes salade tiede" },
-          { "nom": "Huile d'olive", "qty": "-", "usage": "Galettes + salade" },
-          { "nom": "Huile de colza", "qty": "-", "usage": "Curry + pad thai" },
-          { "nom": "Huile de sesame", "qty": "-", "usage": "Poke bowl" },
-          { "nom": "Cumin moulu", "qty": "-", "usage": "Curry + galettes" },
-          { "nom": "Curcuma moulu", "qty": "-", "usage": "Curry" },
-          { "nom": "Paprika", "qty": "-", "usage": "Galettes" },
-          { "nom": "Pate de tamarin", "qty": "-", "usage": "Pad thai (optionnel)" },
+          { "nom": "Sauce soja", "qty": "-", "usage": "Teriyaki + riz saute" },
+          { "nom": "Vinaigre de riz", "qty": "-", "usage": "Sauce teriyaki" },
+          { "nom": "Huile d'olive", "qty": "-", "usage": "Shakshuka" },
+          { "nom": "Huile de colza", "qty": "-", "usage": "Dhal + riz saute + teriyaki" },
+          { "nom": "Huile de sesame", "qty": "-", "usage": "Riz saute" },
+          { "nom": "Cumin moulu", "qty": "-", "usage": "Shakshuka" },
+          { "nom": "Curcuma moulu", "qty": "-", "usage": "Dhal" },
+          { "nom": "Paprika", "qty": "-", "usage": "Shakshuka" },
+          { "nom": "Curry en poudre", "qty": "-", "usage": "Dhal" },
+          { "nom": "Piment d'Espelette / harissa", "qty": "-", "usage": "Shakshuka" },
           { "nom": "Sel, poivre", "qty": "-", "usage": "Base" }
         ]
       }
     ]
   },
   "footer": {
-    "dateMAJ": "9 mai 2026",
-    "note": "Menu adapte au programme sportif de Jad"
+    "dateMAJ": "17 mai 2026",
+    "note": "Menu adapte : shaker liquide matin (sans appetit) + jour pauvre vendredi (pratique spirituelle) + objectif 2400 kcal"
   }
 }
